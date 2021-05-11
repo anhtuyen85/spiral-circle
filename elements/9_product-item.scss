@@ -1,0 +1,80 @@
+.featured-collection__item {        
+    .featured-collection__content {
+        background: #fff;            
+        padding: 15px;
+        text-align: center;
+        line-height: 1.5;
+        position: relative;
+        @media (min-width: 768px) {
+            padding: 42px 15px 40px;
+        }
+        > .svg-element-ui {            
+            display: none;
+            @media (min-width: 768px) {
+                @include ab(16px, 23px, n, n);
+                display: block;
+            }
+        }
+    }
+    .featured-collection__image {
+        padding-bottom: 3px;
+        @media (min-width: 768px) {
+            padding: 0 23px 16px;
+        }
+        .image__style {
+            width: 100%;
+        }
+    }
+    .featured-collection__vendor {
+        a {
+            font-size: calc(var(--body-font-size) - 6px);
+            line-height: 22px;       
+            text-transform: uppercase;
+            display: inline-block;            
+            @media (min-width: 768px) {
+                font-size:var(--body-font-size);
+                line-height: 30px;    
+            }
+        }
+    }
+    .featured-collection__title {
+        font-weight: 700;
+        font-size: calc(var(--body-font-size) - 2px);
+        line-height: 22px;
+        @include font-custom;
+        @media (min-width: 768px) {
+            font-size: calc(var(--body-font-size) + 6px);
+            line-height: 33px;
+        }
+    }
+    .featured-collection__price {
+        font-size:var(--body-font-size);
+        line-height: 22px;
+        font-weight: 700;
+        @media (min-width: 768px) {
+            font-size: calc(var(--body-font-size) + 7px);
+        }
+    }
+    .clockCountdown span {
+        display: unset;
+    }
+    .product-single__form {
+        margin-top: 9px;
+        @media (min-width: 768px) {
+            margin-top: 17px;
+        }
+        .btn {
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+            max-width: 245px;
+            @media (max-width: 767px) {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                font-size: calc(var(--body-font-size) - 4px);
+                max-width: 140px;
+                @include font-body;
+            }
+        }
+    }
+}

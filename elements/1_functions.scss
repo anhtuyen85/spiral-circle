@@ -1,0 +1,196 @@
+@mixin ab($t, $r, $b, $l) {
+    position: absolute;
+
+    @if $l !=n {
+        left: $l;
+    }
+
+    @if $t !=n {
+        top: $t;
+    }
+
+    @if $r !=n {
+        right: $r;
+    }
+
+    @if $b !=n {
+        bottom: $b;
+    }
+}
+
+@mixin fixed($t, $r, $b, $l) {
+    position: fixed;
+
+    @if $l !=n {
+        left: $l;
+    }
+
+    @if $t !=n {
+        top: $t;
+    }
+
+    @if $r !=n {
+        right: $r;
+    }
+
+    @if $b !=n {
+        bottom: $b;
+    }
+}
+
+@mixin transform($transforms) {
+    transform: $transforms;
+}
+
+@mixin translateX($x) {
+    @include transform(translateX($x));
+}
+
+@mixin translateY($y) {
+    @include transform(translateY($y));
+}
+
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+
+    &:-moz-placeholder {
+        @content
+    }
+
+    &::-moz-placeholder {
+        @content
+    }
+
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+@mixin font-body {
+    font-family: var(--font-family);
+}
+@mixin font-heading {
+    font-family: var(--font-heading);
+}
+@mixin font-custom {
+    font-family: 'Nunito', sans-serif;
+}
+%list-style-reset {
+    list-style: none;
+}
+
+%point-event {
+    pointer-events: none;
+}
+
+%point-cursor {
+    cursor: pointer;
+}
+
+%visibility-hidden {
+    visibility: hidden;
+    z-index: -2;
+    opacity: 0;
+}
+
+%visibility-visible {
+    visibility: visible;
+    z-index: 99992;
+    opacity: 1;
+}
+
+%body-style {
+    font-size: var(--body-font-size);
+    font-family: var(--body-font-family);
+    font-weight: var(--body-font-weight);
+    color: var(--body-color);
+    background-color: var(--body-bg-color);
+}
+
+%transition {
+    transition: all .3s linear;
+}
+
+%body-font-size {
+    font-size: var(--body-font-size);
+}
+
+%radius-df {
+    border-radius: 3px;
+}
+
+%radius-circle {
+    border-radius: 50%;
+}
+
+%webkit-scrollbar {
+    width: 4px;
+    background-color: var(--body-border-color);
+    border-radius: 5px;
+}
+
+%webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+
+%scroll-bar {
+    scrollbar-color: var(--main-color) var(--body-border-color);
+    scrollbar-width: thin;
+    position: relative;
+}
+
+
+%hiddenInUp {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%showInUp {
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin fadeIn($dur, $timi, $delay, $cou) {
+    animation-name: fadeIn;
+
+    @if $dur !=n {
+        animation-duration: $dur;
+    }
+
+    @if $timi !=n {
+        animation-timing-function: $timi;
+    }
+
+    @if $delay !=n {
+        animation-delay: $delay;
+    }
+
+    @if $cou !=n {
+        animation-iteration-count: $cou;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
