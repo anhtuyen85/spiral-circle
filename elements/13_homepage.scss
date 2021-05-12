@@ -46,6 +46,14 @@
         display: flex;
         align-items: center;
         margin-bottom: 26px;
+        @media (max-width: 767px) {
+            width: 100% !important;
+            display: none;
+            &:nth-child(1),
+            &:nth-child(2) {
+                display: flex;
+            }
+        }
         @media (min-width: 768px) {
             padding: 32px 21px 32px 50px;
             margin-bottom: 60px;
@@ -77,6 +85,7 @@
             width: 100%;
             max-width: 245px;
             margin-top: 21px;
+            margin-bottom: 0;
             @media (min-width: 768px) {
                 margin-top: 36px;
             }
@@ -85,14 +94,35 @@
             }
         }
     }
+    .layout-full {
+        @include padding-lr;
+        @media (min-width: 768px) {
+            padding-left: 2.5vw;
+            padding-right: 2.5vw;
+        }
+        .collection-wrappper {
+            width: 100%;
+            max-width: 1680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 /* Section List Collection */
 .index-list-collection {
     .collection-item {
         margin-bottom: 20px;
+        @media (max-width: 767px) {
+            display: none;
+            &:nth-child(1), &:nth-child(2),
+            &:nth-child(3), &:nth-child(4),
+            &:nth-child(5), &:nth-child(6) {
+                display: block;
+            }
+        }
         @media (min-width: 768px) {
             margin-bottom: 40px;
-        }
+        }       
         > a {
             display: block;
             width: 100%;
@@ -115,6 +145,47 @@
                     padding-bottom: 23px;
                     font-size: calc(var(--body-font-size) - 2px);
                 }
+            }
+        }
+    }
+}
+/* Section Blog */
+.index-blog-grid {
+    .blog-item {
+        a {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            .btn {
+                padding: 16px 60px;
+                
+            }
+        }
+        &:not(:last-child) {    
+            margin-bottom: 17px;        
+            @media (min-width: 768px) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .blog-item__right {
+        .blog-item {
+            height: 100%;
+            margin-top: 17px;                 
+            @media (min-width: 768px) {
+                margin-top: 0;
+            }
+        }
+    }
+    .layout-boxed {
+        @media (max-width: 767px) {
+            .container {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }

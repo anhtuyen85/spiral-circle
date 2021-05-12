@@ -1,60 +1,20 @@
-.index-collection-content{
-    .collection-item{
-        display: flex;
-        padding: 30px 15px 30px 56px;
-        background-color: #fff;
-        align-items: center;
-        color: #000;
-        margin: 30px 0;
-        &__content{
-            @media (min-width: 768px){
-                max-width: 244px;
-                width: 100%;
-                margin-right: 28px;
-            }
+.mainvisual-collection-template-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 33px;
+    .mainvisual-wrapper {
+        h2 {
+            font-size: 48px;
+            line-height: 72px;
+            font-weight: 500;
+            letter-spacing: -1.5px;
+            @include font-heading;
         }
-        &__image{
-            width: 100%;
-            height: auto;
+        .descript {
+
         }
-        h4{
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
-        .collection__text{
-            margin-bottom: 35px;
-        }
-        .collection__btn{
-            width: 100%;
-            a{
-                color: var(--btn1-cl);
-            }
-        }   
     }
 }
-
-.index-list-collection{
-    .index-link{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        max-width: 330px;
-        height: 330px;
-        border-radius: 50%;
-        align-items: center;
-    }
-}
-
-.index-section-logo{
-    .logo-bar{
-        align-items: center;
-    }
-    @media (min-width: 991px) {
-        .section_title{
-            margin-bottom: 97px;
-        }
-        .logo-bar__item:not(:last-child){
-            margin-right: 116px;
-        }
-    }
+.collection-category {
+    
 }

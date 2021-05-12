@@ -80,6 +80,14 @@
 @mixin font-custom {
     font-family: 'Nunito', sans-serif;
 }
+@mixin padding-lr {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@mixin margin-lr {
+    margin-left: -15px;
+    margin-right: -15px;
+}
 %list-style-reset {
     list-style: none;
 }

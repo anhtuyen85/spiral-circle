@@ -19,6 +19,9 @@
     background: linear-gradient(180deg, #051034 0%, rgba(0, 0, 0, 0.114583) 84.9%, rgba(0, 0, 0, 0) 100%);
     .header-row {
         position: relative;
+        .logo {
+            padding: 10px 0;
+        }
     }
     .main-nav__list{
         height: 100%;        
@@ -30,7 +33,7 @@
             align-items: center;
             > a {
                 font-size: var(--menu-font-size);
-                font-weight: var(--menu-font-wieght);
+                font-weight: var(--menu-font-wieght);                
             }
             &:not(:last-child){
                 padding-right: 30px;
