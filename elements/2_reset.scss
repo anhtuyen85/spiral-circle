@@ -4,6 +4,14 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--body-bg-color);
+  &:not(.template-index) {
+    .main-content {
+      padding-bottom: 40px;
+      @media (min-width: 768px) {
+        padding-bottom: 80px;
+      }
+    }
+  }
 }
 html {
   box-sizing: border-box;
@@ -93,17 +101,11 @@ table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  th,
+  td {
+    padding: 10px;
+  }
 }
-
-th,
-td {
-  padding: 10px;
-}
-
-th {
-  border-bottom: 1px solid var(--body-color);
-}
-
 .list-style,
 .list-inline,
 .list-style-select {
@@ -139,22 +141,77 @@ label {
 input,
 textarea {
   font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
 }
-
+.form-control {
+  margin-bottom: 22px;
+  position: relative;
+  label {
+    display: block;
+    color: #4B5759;    
+    margin-bottom: 13px;
+  }
+  input, input[type="text"] {
+    height: 56px;
+    border-radius: 8px;
+    padding: 13px 29px;
+    text-transform: uppercase;
+    color: #4B5759;
+    font-size: calc(var(--body-font-size) - 4px);
+    width: 100%;
+    border: none;
+    @include placeholder {
+      color: #4B5759;
+    }
+  }
+  .show-password {
+    @include ab(n, 0, 0, n);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    svg path {
+        fill: #4B5759;
+    }
+    .svg__show {
+        display: none;
+    }       
+    &.active {
+        .svg__show {
+            display: flex;
+        }
+        .svg__hide {
+            display: none;
+        }
+    }
+  }
+  .label-inline {
+    justify-content: space-between;
+    a {
+      color: var(--special-border);
+      @media (hover : hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }  
+}
 .pointer {
   @extend %point-cursor;
 }
-
 .clearfix::after {
   display: block;
   clear: both;
   content: "";
 }
-
 ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--main-color);
   border-radius: 10px;
@@ -244,12 +301,6 @@ textarea {
   align-self: flex-end;
 }
 
-@media (prefers-reduced-motion:reduce) {
-  .btn {
-    transition: none
-  }
-}
-
 .btn {
   display: inline-block;
   text-align: center;
@@ -257,8 +308,7 @@ textarea {
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  border: 1px solid transparent;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;  
+  border: 1px solid transparent;  
   outline: none;
   box-shadow: none;
   padding: 10px;
@@ -267,6 +317,7 @@ textarea {
   letter-spacing: 1.5px;
   font-weight: 500;
   @include font-heading;
+  @extend %transition;
   &:hover {
     text-decoration: none;
   }
@@ -378,7 +429,7 @@ textarea {
     a {
       font-size: 15px;
       color: #4c9402;
-      transition: all .2s linear;
+      @extend %transition;
 
       &:hover {
         text-decoration: none;
@@ -500,7 +551,7 @@ input[type="text"] {
   margin-bottom: 28px;
   text-align: center;
   font-weight: 500;
-  font-size: 32px;
+      font-size: var(--heading-size-h2);
   line-height: 40px;
   @include font-heading;
   @media (min-width: 768px) {
@@ -581,15 +632,23 @@ input[type="text"] {
 }
 .breadcrumbs {
   padding: 10px 0;
+  @media (min-width: 768px) {
+    padding: 54px 0 30px;
+  }
   .breadcrumb-list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     font-size: calc(var(--body-font-size) - 4px);    
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 1.5px;
+    color: var(--breadcrumb-color);
     @include font-heading;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
     li {      
       &:not(:last-child) {
         margin-right: 10px;

@@ -1,7 +1,7 @@
 .page_title{
     font-weight: 500;
     line-height: 1.5;
-    font-size: 24px;
+        font-size: var(--heading-size-h3);
 }
 
 #mainvisual{
@@ -20,7 +20,7 @@
                 line-height: 72px;
                 color: #fff;
                 @media (max-width: 991px){
-                    font-size: 36px;
+                    font-size: var(--heading-size-h1);
                     line-height: 40px;
                 }
             }
@@ -47,7 +47,7 @@
     .paragraph{
         max-width: 990px;
         margin: auto;
-        font-size: 24px;
+            font-size: var(--heading-size-h3);
         line-height: 1.5;
         color: #333333;
     }
@@ -79,7 +79,7 @@
             width: 100%;
             margin: auto;
             .page_title{
-                font-size: 24px;
+                    font-size: var(--heading-size-h3);
                 line-height: 1.5;
                 margin-top: 0;
             }
@@ -128,12 +128,12 @@
         }
         &__name{
             font-weight: 500;
-            font-size: 32px;
+                font-size: var(--heading-size-h2);
             line-height: 40px;
         }
         &__position{
             font-weight: 500;
-            font-size: 24px;
+                font-size: var(--heading-size-h3);
             line-height: 1.5;
         }
         &__emoji{
@@ -154,7 +154,7 @@
         .staff-item{
             padding: 20px 15px;
             &__name{
-                font-size: 24px;
+                    font-size: var(--heading-size-h3);
                 line-height: 1.5;
             }
             &__position{

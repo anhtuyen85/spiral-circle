@@ -1,171 +1,215 @@
-.form-vertical{
-    margin-top: 104px;
-    color: #4B5759;
-    h2{
-        color: var(--main-color);
-        margin-bottom: 55px;
-        line-height: 80px;
-        font-weight: 700;
+/* Page Login */
+#customer {
+    margin: 50px auto;
+    max-width: 545px;    
+    @media (min-width: 768px) {
+        margin-top: 104px;
+        margin-bottom: 104px;
+    }
+}
+.form-vertical {   
+    h2 {
         font-size: 56px;
+        line-height: 80px;        
+        margin: 0 auto 30px;
+        color: var(--main-color);
+        
     }
-    label, 
-    p{
-        margin-bottom: 0;
+    .subtext {
+        a {
+            color:  var(--special-border);
+            margin-left: 5px;
+            @media (hover : hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        } 
     }
-}
-.form-control{
-    margin-bottom: var(--gutter-md);
-    position: relative;
-    label{
-        width: 100%;
-        margin-bottom: var(--gutter-xs);
-    }
-    input{
-        width: 100%;
-        padding: 13px 25px;
-        border: 1.5px solid #FFFFFF;
-        box-sizing: border-box;
-        border-radius: 8px;
-        background: #fff;
-    }
-    .show-password{
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-        border: none;
-        background: #fff;
-    }
-}
-::placeholder {
-    color: #333333;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-}
-.text-center{
-    .btn{
-        width: 100%;
-        margin-top: var(--gutter-sm);
-    }
-}
-.policy-terms,
-.remember-pass {
-    color: #333333;
-    margin-top: var(--gutter-lg);
-    margin-bottom: 35px;
-    align-items: baseline;
-    a{
-        color: #CCA7A2;
-    }
-}
-.social-login {
-    margin-bottom: 65px;
-    li{
-        padding: 0 15px;
-    }
-}
-#rememberMe{
-    width: 20px;
-    height: 20px;
-    margin-right: 16px;
-}
-.login-or{
-    text-align: center;
-    position: relative;
-    color: #333333;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 19px;
-    margin-bottom: var(--gutter-xlg);
-    &::before,
-    &::after{
-        content: '';
-        position: absolute;
-        width: 47%;
-        height: 1px;
-        background: #CCA7A2;
-        right: 0;
-        top: 8px;
-    }
-    &::before{
-        left: 0;
-    }
-}
-
-//login
-#CustomerLoginForm{
-    .remember-pass{
-        align-items: center;
-    }
-    #RecoverPassword{
-        width: 100%;
-        text-align: right;
-        color: #CCA7A2;
-    }
-    .account-new{
-        max-width: 366px;
-        margin: auto;
-        width: 100%;
-        color: #333333;
-        text-align: center;
-        font-size: 17px;
-        line-height: 1.5;
-        .section_title{
-            font-size: 26px;
-            margin-bottom: 13px;
-            font-weight: 700;
-            line-height: 37px;
-        }
-        .account-descript{
-            margin-bottom: var(--gutter-sm);
-        }
-        .create-account {
-            width: 100%;
-        }
-    }
-}
-
-.template-customers-register{
-    h2{
-        margin: 0;
-    }
-    .subtext{
-        color: #333333;
-        line-height: 1.5;
-        margin-bottom: var(--gutter-xlg);
-        margin-top: var(--gutter-xs);
-        a{
-            color: #cca7a2;
+    p {
+        margin: 0 0 13px;
+        a {
+            color:  var(--special-border);
+            @media (hover : hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     .policy-terms {
-        margin-bottom: var(--gutter-xs);
+        position: relative;
+        margin: 25px 0;        
+        input {
+            padding: 0;
+            width: 20px;
+            height: 20px; 
+            opacity: 0;
+            @include ab(2px, 0, n, n);            
+        }
+        label {
+            display: block;
+            padding: 0 0 0 36px;
+            margin: 0;
+            position: relative;
+            font-size: calc(var(--body-font-size) - 1px);
+            line-height: 22px;
+            &:before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                border-radius: 3px;
+                border: 2px solid var(--body-color);                
+                @include ab(2px, n, n, 0);
+            }
+            &:after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='black' d='M12 1.74109L4.2672 10L0 5.42655L1.63303 3.68849L4.27004 6.51477L10.3698 0L12 1.74109Z'%3E%3C/path%3E%3C/svg%3E");                                                               
+                opacity: 0;
+                @include ab(0, n, n, 4px);
+            }
+        }
+        input[type=checkbox]:checked + label:after {
+            opacity: 1;
+        }
+        a {
+            color: var(--special-border);
+            @media (hover : hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        } 
+    } 
+    .social-login {
+        margin-top: 42px;
+        li {
+            .svg-element-ui {
+                display: flex;
+            }
+            &:not(:last-child) {
+                margin-right: 27.55px;
+            }
+        }
+    }
+    .btn {
+        font-size: calc(var(--body-font-size) + 4px);    
+        &:not(.create-account) {
+          width: 100%;
+          margin-top: 26px;         
+        }
+    }   
+    .account-new {
+        margin-top: 64px;
+        text-align: center;
+        .section_title {
+            margin-bottom: 13px;
+            font-size: 26px;
+        }
+        .create-account {
+            margin-left: auto;
+            margin-right: auto;    
+            width: 100%;
+            max-width: 345px;
+            padding-left: 15px;
+            padding-right: 15px;   
+        }    
+        .account-descript {
+            margin-bottom: 24px;
+            font-size: calc(var(--body-font-size) - 1px); 
+        }
+    }    
+}
+.remember-pass {
+    margin: 30px 0 35px;
+    position: relative;
+    user-select: none;
+    input {
+        padding: 0;
+        width: 20px;
+        height: 20px; 
+        opacity: 0;
+        @include ab(2px, 0, n, n);            
+    }
+    label {
+        display: block;
+        padding: 0 0 0 36px;
+        margin: 0;
+        position: relative;
+        font-size: var(--body-font-size);
+        line-height: 22px;
+        &:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 2px solid var(--body-color);                
+            @include ab(2px, n, n, 0);
+        }
+        &:after {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='black' d='M12 1.74109L4.2672 10L0 5.42655L1.63303 3.68849L4.27004 6.51477L10.3698 0L12 1.74109Z'%3E%3C/path%3E%3C/svg%3E");                                                               
+            opacity: 0;
+            @include ab(0, n, n, 4px);
+        }
+    }
+    input[type=checkbox]:checked + label:after {
+        opacity: 1;
+    }   
+}
+.login-or {
+    position: relative;
+    text-align: center;
+    &:after {
+        content: '';
+        height: 1px;
+        background: var(--special-border);        
+        margin-top: 1px;
+        @include ab(50%, 0, n, 0);
+    }
+    span {
+        display: inline-block;
+        background: var(--body-bg-color);
+        padding: 0 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: calc(var(--body-font-size) - 4px);
+        position: relative;
+        z-index: 1;
+        @include font-custom;
     }
 }
-
-#RecoverPasswordForm{
-    margin-top: 104px;
-    h2{
-        color: var(--main-color);
-        line-height: 80px;
-        font-weight: 700;
+#RecoverPasswordForm {
+    label {
+        display: block;
+        color: #4B5759;    
+        margin-bottom: 13px;
+      }
+      input[type="email"] {
+        height: 56px;
+        border-radius: 8px;
+        padding: 13px 29px;
+        text-transform: uppercase;
+        color: #4B5759;
+        font-size: calc(var(--body-font-size) - 4px);
+        width: 100%;
+        border: none;
+        @include placeholder {
+          color: #4B5759;
+        }
+    }
+    #HideRecoverPasswordLink {
+        display: inline-block;
+        margin-top: 30px;
+    }
+    #RecoverHeading {
         font-size: 56px;
+        line-height: 80px;        
+        margin: 0 auto 30px;
+        color: var(--main-color);
     }
-    .form-vertical{
-        margin-top: 0;
-        label{
-            width: 100%;
-            margin-bottom: var(--gutter-xs);
-        }
-        .input-full{
-            width: 100%;
-            padding: 13px 25px;
-            border: 1.5px solid #FFFFFF;
-            box-sizing: border-box;
-            border-radius: 8px;
-            background: #fff;
-        }
+    .subtext {
+        margin-bottom: 40px;
     }
-    .btn{
-        margin-top: var(--gutter-xlg);
+    .btn-recover {
+        margin-top: 40px;
     }
 }

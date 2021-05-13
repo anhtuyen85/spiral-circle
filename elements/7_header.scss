@@ -3,7 +3,7 @@
 .announcement-bar {
     padding: 16px 0 10px;
     font-size: 14px;
-    border: 1px solid rgba(251, 236, 241, 0.5);
+    border-bottom: 1px solid rgba(251, 236, 241, 0.5);
 }
 .announcement-bar_icon-social{
     margin-left: 48px;
@@ -16,7 +16,8 @@
 // header
 
 .section-header-main {
-    background: linear-gradient(180deg, #051034 0%, rgba(0, 0, 0, 0.114583) 84.9%, rgba(0, 0, 0, 0) 100%);
+    // background: linear-gradient(180deg, #051034 0%, rgba(0, 0, 0, 0.114583) 84.9%, rgba(0, 0, 0, 0) 100%);
+    background: var(--menu-background-color);
     .header-row {
         position: relative;
         .logo {
@@ -33,7 +34,9 @@
             align-items: center;
             > a {
                 font-size: var(--menu-font-size);
-                font-weight: var(--menu-font-wieght);                
+                font-weight: var(--menu-font-wieght);    
+                color: var(--menu-color);                
+                @include font-custom;
             }
             &:not(:last-child){
                 padding-right: 30px;

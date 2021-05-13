@@ -21,7 +21,7 @@
         margin-bottom: 30px;
         @include font-heading;
         @media (min-width: 768px) {
-            font-size: 24px;
+                font-size: var(--heading-size-h3);
             line-height: 30px;
             margin-bottom: 35px;
         }

@@ -70,10 +70,9 @@
         .collection__title {
             text-transform: uppercase;
             letter-spacing: -1.5px;
-            font-size: 32px;
+                font-size: var(--heading-size-h2);
             line-height: 46px;
-            margin-bottom: 36px;
-            @include font-custom;
+            margin-bottom: 36px;            
         }
         .collection__text {
             font-size: calc(var(--body-font-size) - 2px);
@@ -127,11 +126,9 @@
             display: block;
             width: 100%;
             padding-top: 100%;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            border-radius: 50%;            
             position: relative;
+            @include bg-custom;
             .collection__title {
                 @include ab(50%, n, n, 50%);
                 transform: translate(-50%, -50%);
@@ -153,9 +150,7 @@
 .index-blog-grid {
     .blog-item {
         a {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            @include bg-custom;
             display: flex !important;
             justify-content: center;
             align-items: center;
