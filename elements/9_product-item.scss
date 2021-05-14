@@ -1,9 +1,17 @@
+.product-price {
+    color: var(--price-color);
+}
+.price-sale  {
+    color: var(--price-sale-color);
+}
+.price-compare {
+    color: var(--price-compare-color);
+}
 .featured-collection__item {        
     .featured-collection__content {
         background: #fff;            
         padding: 15px;
-        text-align: center;
-        line-height: 1.5;
+        text-align: center;        
         position: relative;
         display: flex;
         flex-direction: column;
@@ -22,7 +30,11 @@
     .featured-collection__image {
         padding-bottom: 3px;
         @media (min-width: 768px) {
-            padding: 0 23px 16px;
+            padding: 0 5% 16px;
+        }
+        @media (min-width: 1440px) {
+            padding-left: 23px;
+            padding-right: 23px;
         }
         .image__style {
             width: 100%;
@@ -44,15 +56,26 @@
         font-weight: 700;
         font-size: calc(var(--body-font-size) - 2px);
         line-height: 22px;
+        margin-bottom: 8px;
         @include font-custom;
         @media (min-width: 768px) {
             font-size: calc(var(--body-font-size) + 6px);
             line-height: 33px;
+            margin-bottom: 15px;
+        }
+    }
+    .featured-collection__review {
+        margin-bottom: 7px;
+        line-height: 11px;
+        > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;            
         }
     }
     .featured-collection__price {
         font-size:var(--body-font-size);
-        line-height: 22px;
+        line-height: 35px;
         font-weight: 700;
         color: var(--price-color);
         @media (min-width: 768px) {
@@ -76,7 +99,7 @@
             @media (max-width: 767px) {
                 padding-top: 3px;
                 padding-bottom: 3px;
-                font-size: calc(var(--body-font-size) - 4px);
+                font-size: calc(var(--body-font-size) - 6px);
                 max-width: 140px;
                 @include font-body;
             }
@@ -108,6 +131,7 @@
         
     }
     .featured_block {
+        user-select: none;
         &:not(:last-child) {
             margin-bottom: 40px;
         }
@@ -128,6 +152,7 @@
             font-weight: 700;
             margin-bottom: 10px;
             border-radius: 40px;
+            cursor: pointer;
             @include font-custom;  
             &:not(:last-child) {
                 margin-right: 40px;

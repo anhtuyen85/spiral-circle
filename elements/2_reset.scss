@@ -446,7 +446,7 @@ textarea {
 }
 
 input[type="text"] {
-  height: 42px;
+  height: 48px;
   background: rgba(255, 255, 255, 0.8);
   padding: 10px 20px;
   font-size: 12px;
@@ -576,36 +576,43 @@ input[type="text"] {
   }
 }
 .slider-controls {
-  > a {
-    @include ab(35%, n, n, n);    
-    svg {
-      width: 22px;
-    }  
-  }
-  .js-prev-button {
-    left: -15px;
+  > a {    
+    display: none;
     @media (min-width: 768px) {
-      left: calc(-2.5vw - 15px);   
-    }
-    @media (min-width: 1400px) {
-      left: calc(calc(-1 * (100vw - 1400px) / 2) + 15px);    
-    }
-    @media (min-width: 1550px) {
-      left: -68px;
-    }
-  }
-  .js-next-button {
-    right: -15px;
-    @media (min-width: 768px) {
-      right: calc(-2.5vw - 15px);   
-    }
-    @media (min-width: 1400px) {
-      right: calc(calc(-1 * (100vw - 1400px) / 2) + 15px); 
-    }
-    @media (min-width: 1550px) {
-      right: -68px;
-    }
-  }
+      display: block;
+      @include ab(35%, n, n, n);    
+      svg {
+        width: 22px;
+        path {
+          stroke: var(--special-border);
+        }
+      } 
+      &.js-prev-button {
+        left: -15px;
+        @media (min-width: 768px) {
+          left: calc(-2.5vw - 15px);   
+        }
+        @media (min-width: 1400px) {
+          left: calc(calc(-1 * (100vw - 1400px) / 2) + 15px);    
+        }
+        @media (min-width: 1550px) {
+          left: -68px;
+        }
+      }
+      &.js-next-button {
+        right: -15px;
+        @media (min-width: 768px) {
+          right: calc(-2.5vw - 15px);   
+        }
+        @media (min-width: 1400px) {
+          right: calc(calc(-1 * (100vw - 1400px) / 2) + 15px); 
+        }
+        @media (min-width: 1550px) {
+          right: -68px;
+        }
+      }
+    }    
+  }  
 }
 .tns-nav {
   margin: 35px auto 0;
@@ -655,4 +662,7 @@ input[type="text"] {
       }
     }
   }
+}
+.tns-slider {
+  display: flex; 
 }

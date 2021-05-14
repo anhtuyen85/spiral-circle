@@ -95,22 +95,18 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        text-align: center;
-        margin-left: -15px;
-        margin-right: -15px;
+        text-align: center;        
         align-items: flex-end;
         @media (min-width: 768px) {
             text-align: left;
             justify-content: space-between;
-        }
-        @include margin-lr;
-        > div {
-            @include padding-lr;
+        }        
+        > div {         
             margin-bottom: 35px;
         }
     }
     .footer-item__logo {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         display: block;
     }
     .menu_list-wrapper {
@@ -125,6 +121,7 @@
     }
     .list-social{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         @media (min-width: 768px) {
             justify-content: left;
@@ -132,8 +129,11 @@
         a {
             display: flex;
         }
-        li:not(:last-child){
-            margin-right: 20px;
+        li {
+            margin-top: 10px;
+            &:not(:last-child){
+                margin-right: 20px;
+            }
         }
     }
     .list-payment{

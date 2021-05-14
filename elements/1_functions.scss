@@ -212,6 +212,14 @@
         opacity: .5;
     }
 }
+@keyframes mmfadeIn {
+    from { 
+        opacity: 0; 
+    }
+    to {
+        opacity: 1;
+    }
+}   
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
