@@ -1,32 +1,8 @@
-.mainvisual-collection-template-top {
-    display: flex;
-    align-items: center;        
-    @media (min-width: 768px) {
-        padding-top: 130px;
-    }
-    .mainvisual-wrapper {
-        max-width: 990px;
-        margin-left: auto;
-        margin-right: auto;
-        h2 {
-            font-size: 48px;
-            line-height: 72px;
-            font-weight: 500;
-            letter-spacing: -1.5px;
-            margin-bottom: 30px;
-            @include font-heading;
-        }
-        .descript {
-            font-size: calc(var(--body-font-size) + 6px);
-            line-height: 30px;
-        }
-    }
-}
 .section-collection-template-top {
     .collection-title {
         h3 {
             color: var(--main-color);
-                font-size: var(--heading-size-h2);
+            font-size: var(--heading-size-h2);
             line-height: 40px;
             font-weight: 500;
             margin-bottom: 30px;
@@ -40,44 +16,66 @@
     }   
 }
 .collection-category {
-    .category_item {
-        padding-top: 75%;
-        position: relative;    
+    .category_item {           
         @include bg-custom;
-        margin-bottom: 20px;
-        @media (min-width: 768px) {
-            border-radius: 40px; 
-            margin-bottom: 25px;
-            padding-top: 100%;
+        margin-bottom: 20px;              
+        @media (min-width: 768px) {            
+            margin-bottom: 25px;            
+            border-radius: 40px;  
         }
-        > a .btn {
-            @include font-custom;
-            @include ab(50%, 25px, n, 25px);            
-            transform: translateY(-50%);
-            line-height: 21px;
-            padding: 6px;
-            text-align: center;
-            font-size: 11px;
-            font-weight: 70;
-            letter-spacing: 1.5px;
-            color: var(--btn1-cl);            
-            background-color: var(--btn1-bg-cl);
-            border: var(--btn1-border-width) solid var(--btn1-border-cl);
-            @media (min-width: 768px) {
-                font-size: calc(var(--body-font-size) - 4px);
-                font-weight: 500;
-                line-height: 20px;
-                padding: 23px 10px;
-                color: var(--btn3-cl);                
-                background-color: var(--btn3-bg-cl);
-                border: var(--btn3-border-width) solid var(--btn3-border-cl);
-                @include font-heading;
-                @media (hover : hover) {
-                   &:hover {
-                    background-color: var(--btn3-hover-bg-cl);
-                    border-color: var(--btn3-hover-border-cl);
-                    color: var(--btn3-hover-cl);
-                   }
+        > a {
+            padding-top: 75%;
+            display: block;
+            position: relative;                         
+            @media (min-width: 768px) {                
+                padding-top: 100%;
+                border-radius: 40px;    
+            }
+            &:after {
+                content: '';
+                background: rgba(0, 0, 0, .4);
+                opacity: 0;
+                border-radius: 40px;    
+                @include ab(0, 0, 0, 0);
+                @extend %transition;
+            }
+            .btn {
+                @include font-custom;
+                @include ab(50%, 25px, n, 25px);            
+                transform: translateY(-50%);
+                z-index: 1;
+                line-height: 21px;
+                padding: 6px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 70;
+                letter-spacing: 1.5px;
+                color: var(--btn1-cl);            
+                background-color: var(--btn1-bg-cl);
+                border: var(--btn1-border-width) solid var(--btn1-border-cl);
+                @media (min-width: 768px) {
+                    font-size: calc(var(--body-font-size) - 4px);
+                    font-weight: 500;
+                    line-height: 20px;
+                    padding: 23px 10px;
+                    color: var(--btn3-cl);                
+                    background-color: var(--btn3-bg-cl);
+                    border: var(--btn3-border-width) solid var(--btn3-border-cl);
+                    @include font-heading;
+                    @media (hover : hover) {
+                       &:hover {
+                        background-color: var(--btn3-hover-bg-cl);
+                        border-color: var(--btn3-hover-border-cl);
+                        color: var(--btn3-hover-cl);
+                       }
+                    }
+                }
+            }
+            @media (hover : hover) {
+                &:hover {
+                    &:after {
+                        opacity: 1;
+                    }
                 }
             }
         }

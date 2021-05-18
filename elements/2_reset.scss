@@ -666,3 +666,26 @@ input[type="text"] {
 .tns-slider {
   display: flex; 
 }
+#mainvisual {
+  display: flex;
+  align-items: center;        
+  @media (min-width: 768px) {
+      padding-top: 130px;
+  }
+  .mainvisual-wrapper {
+      max-width: 990px;
+      margin-left: auto;
+      margin-right: auto;
+      h2 {
+          @include title-custom;
+          margin-bottom: 0;     
+        + .descript {
+          margin-top: 30px;
+        }    
+      }
+      .descript {
+          font-size: calc(var(--body-font-size) + 6px);
+          line-height: 30px;
+      }
+  }
+}
