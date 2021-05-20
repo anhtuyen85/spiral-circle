@@ -1,0 +1,229 @@
+/* Cart Sidebar */
+.show-cart-drawer {         
+    .drawer-close-ui {                
+        @include fixed(0, n, 0, n);
+        right: 100%;
+        z-index: 1001;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;        
+        transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1),visibility 0.4s cubic-bezier(0, 0, 0.2, 1);
+        @media (min-width: 610px) {
+            right: 610px;
+        }
+    }
+    #CartDrawer {                
+        animation: animation-right-left .8s both;                        
+    }
+}
+#CartDrawer {
+    @include fixed(0, 0, n, n);    
+    width: 100%;
+    height: 100vh;
+    max-width: 610px;    
+    background: var(--body-bg-color);
+    padding: 30px 25px 50px; 
+    z-index: 1002;          
+    animation: animation-left-right .8s both;                   
+    @media (min-width: 500px) {
+        padding-left: 35px;
+        padding-right: 35px;                
+    }
+}
+.drawer-header {
+    .drawer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 30px;
+        .btn {
+            padding: 0;
+            .svg-element-ui {
+                display: flex;
+                svg {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            @media (hover: hover) {
+                &:hover {
+                    svg path {
+                        fill: var(--main-color);
+                    }
+                }
+            }
+        }
+        h3 {
+            a {
+                display: flex;
+                align-items: center;
+                color: var(--body-color);
+                @media (hover: hover) {
+                    color: var(--main-color);
+                    &:hover {
+                        svg path {
+                            fill: var(--main-color);
+                        }
+                    }
+                }
+            }
+            .svg-element-ui {
+                margin-right: 23.88px;
+                display: flex;
+            }
+        }
+    }
+}
+.drawer-body {
+    height: calc(100vh - 300px);
+    overflow: hidden;
+    overflow-y: auto;      
+    @media (min-width: 500px) {
+        height: calc(100vh - 380px);
+    }
+    @include custom-scrollbar;     
+}
+.drawer-inner {
+    .line-item {
+        display: block;
+        width: 100%;
+        &:not(:last-child) {
+            margin: 0 0 85px;
+        }
+    }
+    .line-item-inner {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .line-item--media {
+            flex: 0 0 115px;
+            max-width: 115px;
+        }
+        .line-item--infor {
+            flex: 0 0 calc(100% - 115px);
+            padding: 0 0 0 15px;
+            @media (min-width: 500px) {
+                padding-left: 35px;
+            }
+        }
+
+    }
+    .line-item--remove {
+        text-align: center;
+        margin: 10px auto 0;
+        a {
+            text-transform: uppercase;
+            font-size: calc(var(--body-font-size) - 2px);            
+            letter-spacing: 0.15em;
+            display: inline-block;
+            line-height: 30px;
+            position: relative;
+            &:after {
+                content: '';
+                height: 1px;
+                background: var(--body-link);
+                @include ab(n, 0, 0, 0);
+            }
+            &:hover {
+                &:after {
+                    background: var(--main-color);
+                }
+            }
+        }
+    }
+    .item-title {
+        margin: 0 0 13px;   
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700; 
+        letter-spacing: -1.5px;             
+        @include font-custom-2;
+        @media (min-width: 500px) {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+    .line-item-options {
+        p {
+            margin: 0 0 17px;            
+            font-size: calc(var(--body-font-size) + 1px);
+            line-height: 36px;
+            letter-spacing: -1.5px;
+            @include font-custom-2;
+        }
+    }
+    .line-item--price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 17px 0 0;
+        .product-quantity {
+            border-bottom: 1px solid var(--body-color);
+            width: 140px;
+            position: relative;
+            input {
+                height: 38px;
+                font-size: calc(var(--body-font-size) - 2px);       
+                font-weight: 400;     
+                width: 100%;       
+                border: none;              
+                text-align: center;
+            }
+            > a {
+                display: flex;
+                width: 30px;
+                height: 37px;
+                justify-content: center;
+                align-items: center;
+            }
+            .btn-minus {
+                @include ab(0, n, n, 0);
+            }
+            .btn-plus {
+                @include ab(0, 0, n, n);
+            }
+        }
+        > p {
+            @include font-custom-2;
+            margin: 0;                        
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700; 
+            letter-spacing: -1.5px;             
+            @include font-custom-2;
+            @media (min-width: 500px) {
+                font-size: 24px;
+                line-height: 36px;
+            }          
+        }
+    }
+}
+.drawer-footer {   
+    .drawer-subtotal {        
+        line-height: 30px;        
+        font-size: var(--body-font-size);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 0 0 18px;
+        @media (min-width: 500px) {
+            font-size: calc(var(--body-font-size) + 4px);            
+        }
+        span {
+            padding-left: 15px;
+            display: inline-block;
+        }
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;        
+        line-height: 28px;
+        font-weight: 400;        
+        font-family: var(--body-font-family);
+        @media (min-width: 500px) {
+            padding-top: 20px;    
+            padding-bottom: 20px;    
+            font-size: calc(var(--body-font-size) + 2px);
+        }
+    }
+}

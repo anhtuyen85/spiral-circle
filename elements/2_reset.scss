@@ -3,15 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--body-bg-color);
-  &:not(.template-index) {
-    .main-content {
-      padding-bottom: 40px;
-      @media (min-width: 768px) {
-        padding-bottom: 80px;
-      }
-    }
-  }
+  background-color: var(--body-bg-color);  
 }
 html {
   box-sizing: border-box;
@@ -20,6 +12,14 @@ html {
 body {
   @extend %body-style;
   line-height: 30px;
+  &:not(.template-index) {
+    .main-content {
+      padding-bottom: 40px;
+      @media (min-width: 768px) {
+        padding-bottom: 80px;
+      }
+    }
+  }
 }
 *,
 *:before,
@@ -687,5 +687,16 @@ input[type="text"] {
           font-size: calc(var(--body-font-size) + 6px);
           line-height: 30px;
       }
+  }
+}
+.template-captcha {
+  .main-content {
+    margin-top: 35px;        
+    @media (min-width: 768px) {        
+      margin-top: 65px;
+    }
+    .btn {
+      @extend .btn-2;         
+    }
   }
 }

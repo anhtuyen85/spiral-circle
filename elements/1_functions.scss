@@ -150,28 +150,23 @@
     border-radius: 3px;
 }
 
-%radius-circle {
-    border-radius: 50%;
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--body-color);
+        -webkit-box-shadow: inset 0 0 var(--body-color);
+        background-color: var(--body-color);
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: var(--body-color);
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--main-color);
+        border-radius: 5px;
+    }
 }
-
-%webkit-scrollbar {
-    width: 4px;
-    background-color: var(--body-border-color);
-    border-radius: 5px;
-}
-
-%webkit-scrollbar-thumb {
-    background-color: var(--main-color);
-    border-radius: 5px;
-}
-
-%scroll-bar {
-    scrollbar-color: var(--main-color) var(--body-border-color);
-    scrollbar-width: thin;
-    position: relative;
-}
-
-
 %hiddenInUp {
     opacity: 0;
     visibility: hidden;
@@ -227,6 +222,26 @@
         opacity: 1;
     }
 }   
+@keyframes animation-right-left {
+    from {
+        opacity: 0;
+        transform: translateX(610px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}  
+@keyframes animation-left-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(610px);
+    }
+}  
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');

@@ -38,8 +38,8 @@
     }
 }
 /* Section Collection Content*/
-.index-collection-content {    
-    .collection-item {
+.index-collection-content {        
+    .collection-item {        
         position: relative;
         padding: 40px;
         background: #fff;
@@ -56,10 +56,7 @@
         }
         @media (min-width: 768px) {
             padding: 32px 20px 32px 50px;
-            margin-bottom: 60px;           
-            .collection-item__image {               
-                display: none;
-            }
+            margin-bottom: 60px;                      
         }
         .collection-item__content {            
             @media (min-width: 1200px) {
@@ -68,12 +65,13 @@
             }
         }
         .collection-item__image {
+            display: none;
             @media (min-width: 1200px) {
                 display: block;
                 flex: 1;
                 min-width: 0;
                 padding: 0 0 0 28px;
-            }
+            }            
         }
         .collection__title {
             text-transform: uppercase;

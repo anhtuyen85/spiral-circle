@@ -213,13 +213,13 @@
                 text-align: center;
                 font-size: calc(var(--body-font-size) - 4px);
                 text-transform: uppercase;
+                border: 1.5px solid var(--btn2-border-cl);
+                color: var(--btn2-border-cl);
                 @extend %transition;
             }
             .swt-size {
                 padding: 12px 15px;               
-                min-width: 166px;
-                border: 1.5px solid var(--btn2-border-cl);
-                color: var(--btn2-border-cl);
+                min-width: 166px;               
                 @media (min-width: 800px) {
                     padding-left: 58px;
                     padding-right: 58px;
