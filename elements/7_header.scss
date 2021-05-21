@@ -27,7 +27,23 @@
         &:not(:last-child){
             padding-right: 30px;
         }
-    }    
+    }  
+    .btn-call-popup {
+        position: relative;
+        .number {
+            @include ab(-8px, -12px, n, n);
+            @include font-custom;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--main-color);
+            color: var(--main-text-color);
+            font-weight: 900;            
+        }
+    }  
 }
 
 // header
@@ -64,12 +80,12 @@
             }
             > .child-menu {
                 visibility: hidden;                    
-                background: #051034;                                                                
-                display: none;
+                background: var(--menu-background-color);                                                                               
                 opacity: 0;
                 min-width: 220px;
                 padding: 15px;
-                animation: mmfadeIn 0.5s ease-in-out; 
+                display: none;
+                animation: mmfadeIn 0.5s ease-in-out;                             
                 @include ab(100%, n, n, 0);    
                 li {
                     a {
@@ -130,11 +146,46 @@
                     }
                 }              
             }
+            &:not(.has-mega) {
+                .dropdown-menu {
+                    white-space: nowrap;
+                    padding: 16px 0;
+                    .dropdown-wrap {
+                        padding: 0;
+                    }
+                    .menu-list {
+                        li {
+                            padding: 0 20px;
+                        }
+                        .menu-item {
+                            position: relative;
+                            .dropdown-menu {
+                                visibility: hidden;                    
+                                background: var(--menu-background-color);                                                                               
+                                opacity: 0;
+                                display: none;
+                                min-width: 220px;                                
+                                animation: mmfadeIn 0.5s ease-in-out;                             
+                                @include ab(0, n, n, 100%);
+
+                            }
+                            &:hover {
+                                > .dropdown-menu {
+                                    visibility: visible;
+                                    z-index: 999;       
+                                    opacity: 1;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             &:hover {
-                > .child-menu {
-                    display: block;
+                > .child-menu {                    
                     visibility: visible;
-                    z-index: 999;       
+                    z-index: 999;     
+                    display: block;  
                     opacity: 1;                 
                 }
             }   

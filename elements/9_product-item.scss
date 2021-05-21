@@ -38,6 +38,9 @@
         }
         .image__style {
             width: 100%;
+            img {
+                object-fit: contain;
+            }
         }
     }
     .featured-collection__vendor {
