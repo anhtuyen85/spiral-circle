@@ -130,25 +130,22 @@
             }
         }
     }
-    .item-title {
-        margin: 0 0 13px;   
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 700; 
-        letter-spacing: -1.5px;             
-        @include font-custom-2;
-        @media (min-width: 500px) {
-            font-size: 24px;
-            line-height: 36px;
+    .item-title {        
+        font-weight: 500;
+        font-size: calc(var(--body-font-size) - 2px);
+        line-height: 22px;
+        margin-bottom: 8px;
+        @include font-heading;
+        @media (min-width: 768px) {
+            font-size: calc(var(--body-font-size) + 6px);
+            line-height: 29px;
+            margin-bottom: 20px;
         }
     }
     .line-item-options {
         p {
-            margin: 0 0 17px;            
-            font-size: calc(var(--body-font-size) + 1px);
-            line-height: 36px;
-            letter-spacing: -1.5px;
-            @include font-custom-2;
+            margin: 0 0 22px;                                    
+            letter-spacing: -1.5px;            
         }
     }
     .line-item--price {
@@ -183,32 +180,27 @@
                 @include ab(0, 0, n, n);
             }
         }
-        > p {
-            @include font-custom-2;
+        > p {            
             margin: 0;                        
-            font-size: 20px;
+            font-size: calc(var(--body-font-size) + 2px);     
             line-height: 30px;
-            font-weight: 700; 
-            letter-spacing: -1.5px;             
-            @include font-custom-2;
-            @media (min-width: 500px) {
-                font-size: 24px;
-                line-height: 36px;
+            font-weight: 700;             
+            @include font-custom;
+            @media (min-width: 600px) {
+                font-size: calc(var(--body-font-size) + 6px);     
+                line-height: 32.74px;
             }          
         }
     }
 }
 .drawer-footer {   
     @include fixed(n, 35px, 50px, 35px);
-    .drawer-subtotal {        
-        line-height: 30px;        
-        font-size: var(--body-font-size);
+    .drawer-subtotal {                       
         text-transform: uppercase;
         letter-spacing: 1.5px;
         margin: 0 0 18px;
-        @media (min-width: 500px) {
-            font-size: calc(var(--body-font-size) + 4px);            
-        }
+        color: var(--body-link);
+        @include font-heading;        
         span {
             padding-left: 15px;
             display: inline-block;
@@ -219,11 +211,12 @@
         padding: 10px;        
         line-height: 28px;
         font-weight: 400;        
-        font-family: var(--body-font-family);
+        font-family: var(--body-font-family);  
+        letter-spacing: 1.5px;      
         @media (min-width: 500px) {
-            padding-top: 20px;    
-            padding-bottom: 20px;    
-            font-size: calc(var(--body-font-size) + 2px);
+            padding-top: 19px;    
+            padding-bottom: 19px;    
+            font-size: calc(var(--body-font-size) + 4px);
         }
     }
 }

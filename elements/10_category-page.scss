@@ -44,7 +44,9 @@
                 @include ab(50%, 25px, n, 25px);            
                 transform: translateY(-50%);
                 z-index: 1;
-                line-height: 21px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 padding: 6px;
                 text-align: center;
                 font-size: 11px;
@@ -56,8 +58,7 @@
                 @media (min-width: 768px) {
                     font-size: calc(var(--body-font-size) - 4px);
                     font-weight: 500;
-                    line-height: 20px;
-                    padding: 23px 10px;
+                    height: 70px;                                        
                     color: var(--btn3-cl);                
                     background-color: var(--btn3-bg-cl);
                     border: var(--btn3-border-width) solid var(--btn3-border-cl);

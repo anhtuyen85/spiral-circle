@@ -240,17 +240,17 @@
             flex: 0 0 100%;
             max-width: 100%;
         }     
+        .paragraph {        
+            @media (min-width: 1200px) {
+                font-size: var(--heading-size-h3);
+            }
+        } 
     }
     .page_title {        
         color: var(--main-color);    
         margin-bottom: 0;        
         @include title-custom;
-    }
-    .paragraph {        
-        @media (min-width: 1200px) {
-            font-size: var(--heading-size-h3);
-        }
-    }
+    }    
 }
 .wrapper-content {
     .block-image_content {
@@ -275,6 +275,8 @@
         }
         .page_title {
             margin-bottom: 14px;
+            font-size: var(--heading-size-h3);
+            line-height: 30px;
         }
     }
     .block-banner {
@@ -290,7 +292,12 @@
             max-width: 340px;
             margin-top: 30px;
             text-align: center;
-        }          
+        }  
+        .paragraph {        
+            @media (min-width: 1200px) {
+                font-size: var(--heading-size-h3);
+            }
+        }        
     }
     .banner-bg {
         @include bg-custom;
