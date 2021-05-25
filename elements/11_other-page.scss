@@ -9,10 +9,7 @@
 }
 .form-vertical {   
     h2 {
-        font-size: 56px;
-        line-height: 80px;        
-        margin: 0 auto 30px;
-        color: var(--main-color);        
+        @include title-heading;      
     }
     &.form-message__title {
         line-height: 30px;
@@ -210,10 +207,7 @@
         margin-top: 30px;
     }
     #RecoverHeading {
-        font-size: 56px;
-        line-height: 80px;        
-        margin: 0 auto 30px;
-        color: var(--main-color);
+        @include title-heading;
     }
     .subtext {
         margin-bottom: 40px;
@@ -221,6 +215,83 @@
     .btn-recover {
         margin-top: 40px;
     }
+}
+.template-customers-account,
+.template-customers-addresses {
+    .main-content {
+        margin-top: 80px;
+        @media (min-width: 768px) {
+            margin-top: 80px;
+        }
+    }    
+    .section-header {
+        h1 {
+            @include title-heading;
+        }
+    }
+    #add_address_title {
+        @include title-heading;
+        text-align: center;
+    }
+    .action_bottom {
+        text-align: center;
+        margin-top: 20px;
+        .btn {
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+}
+.customer_address_table {
+    input:not[type="checkbox"], select {
+        width: 100%;
+    }
+    .label {
+        label {
+            margin: 0;
+        }
+    }
+    .set-default-address {
+        td {
+            padding: 0;
+        }
+        .value {
+            position: relative;
+            input[type="checkbox"] {
+                @include ab(0, n, n, 0);
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                &:checked ~ span:after {
+                    opacity: 1;
+                }
+            }
+            > span { 
+                display: flex;
+                align-items: center;
+                &:after {
+                    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='black' d='M12 1.74109L4.2672 10L0 5.42655L1.63303 3.68849L4.27004 6.51477L10.3698 0L12 1.74109Z'%3E%3C/path%3E%3C/svg%3E");                                                               
+                    opacity: 0;
+                    height: 20px;
+                    @include ab(-2px, n, n, 4px);
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    background: #ffffff;
+                    border: none;
+                    border-radius: 4px;
+                    width: 20px;
+                    height: 20px;                
+                    margin-right: 7px;
+                }
+                > span {
+                    flex: 1;  
+                }
+            } 
+        } 
+    }      
 }
 
 /* About us */

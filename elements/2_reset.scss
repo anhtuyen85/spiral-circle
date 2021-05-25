@@ -137,11 +137,47 @@ label {
   display: inline-block;
   margin-bottom: 5px;
 }
-
-input,
+select,
+input, input[type="text"],
 textarea {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size);
+  border-radius: 8px;
+  padding: 13px 29px;
+  text-transform: uppercase;
+  color: #4B5759;
+  font-size: calc(var(--body-font-size) - 4px);
+  width: 100%;
+  border: none;  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none; 
+  -o-appearance: none;
+  appearance: none;
+  @include placeholder {
+    color: #4B5759;
+  }
+}
+input[type="checkbox"] {
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  -ms-appearance: auto; 
+  -o-appearance: auto;
+  appearance: auto;
+  width: auto;
+  padding: 0;
+}
+select {
+  max-width: 100%;
+  padding: 0 35px 0 15px;
+  height: 48px;      
+  line-height: 48px;  
+  border: none;
+  background-repeat: no-repeat;                  
+  background-size: 9px 6px;
+  background-position: calc(100% - 15px) center;
+}
+select::-ms-expand {
+  display: none;
 }
 .form-control {
   margin-bottom: 22px;
@@ -150,19 +186,9 @@ textarea {
     display: block;
     color: #4B5759;    
     margin-bottom: 13px;
-  }
+  }  
   input, input[type="text"] {
-    height: 56px;
-    border-radius: 8px;
-    padding: 13px 29px;
-    text-transform: uppercase;
-    color: #4B5759;
-    font-size: calc(var(--body-font-size) - 4px);
-    width: 100%;
-    border: none;
-    @include placeholder {
-      color: #4B5759;
-    }
+    height: 56px;    
   }
   .show-password {
     @include ab(n, 0, 0, n);
@@ -698,5 +724,89 @@ input[type="text"] {
     .btn {
       @extend .btn-2;         
     }
+  }
+}
+/* Popup styles */
+body.modal-opened { 
+  overflow: hidden;
+  height: 100%;
+  max-height: 100vh; 
+} 
+.modal-ui {   
+  display: none; 
+  > div[data-dialog-close] { 
+    @include fixed(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);  
+    width: 100vw;
+    height: 100vh;   
+    z-index: -1;
+    @extend %visibility-hidden;       
+    transition: opacity 0.4s cubic-bezier(0,0,.2,1), visibility 0.4s cubic-bezier(0,0,.2,1);
+  }
+  &.is-open {
+      display: block;
+      > div[data-dialog-close] {        
+        visibility: visible;
+      z-index: 2;
+      opacity: 1;         
+      }
+  } 
+  header {
+      position: static;
+      button[data-dialog-close] {
+          @include ab(10px, 10px, n, n); 
+          padding: 0;
+          border: none;
+
+          cursor: pointer;
+          svg path {
+              fill: var(--body-link);
+          }
+      }
+  }
+  > div[data-dialog-close] { 
+      @extend %visibility-visible;
+  }
+  > div:not([data-dialog-close]) {  
+      @include fixed(50%, n, n, 50%); 
+      z-index: 1001; 
+      background: var(--body-bg-color); 
+      padding: 40px 30px;          
+      width: calc(100% - 30px);
+      max-width: 812px;
+      max-height: 90vh;  
+      overflow: hidden;
+      overflow-y: auto;
+      transform: translate(-50%, -50.1%); 
+      animation: mmfadeIn .3s cubic-bezier(0,0,.2,1);
+      @media (min-width: 992px) {
+          padding: 40px;
+      }
+      > div {
+          width: 100%;
+          color: var(--body-color);  
+      }
+  }  
+  button.btn-dialog--close {        
+      @include ab(0, n, n, 0);
+      font-family: var(--body-font-family);
+      cursor: pointer;
+      min-width: 45px;
+      width: 45px;
+      height: 45px;
+      font-size: 30px;
+      color: var(--body-color);  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      svg {
+          pointer-events: none;
+          path {
+              color: var(--body-color);  
+          }
+      }
   }
 }

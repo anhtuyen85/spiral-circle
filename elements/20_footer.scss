@@ -48,11 +48,19 @@
                 margin-bottom: 19px;
                 width: 100%;
                 line-height: 30px;
-                height: 60px;
-                max-width: 350px;         
+                height: 58px;
+                max-width: 350px;    
+                border-radius: 0;   
+                color: #bababa;
+                letter-spacing: 1.5px;  
+                font-weight: 500;
+                @include font-heading;
                 @media (min-width: 768px) {
                     margin-right: 21px;
                 }
+                @include placeholder {
+                    color: #bababa;
+                  }
             }
             .input-group__btn {
                 margin-bottom: 19px;
@@ -60,8 +68,8 @@
                 max-width: 349px;      
             }
             .btn {
-                padding-top: 15px;
-                padding-bottom: 15px;
+                padding-top: 14px;
+                padding-bottom: 14px;
                 width: 100%;                                          
             }           
         }

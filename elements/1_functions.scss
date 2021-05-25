@@ -106,6 +106,12 @@
     letter-spacing: -1.5px;               
     @include font-heading;
 }
+@mixin title-heading {
+    font-size: 56px;
+    line-height: 80px;
+    margin: 0 auto 30px;
+    color: var(--main-color);
+}
 %list-style-reset {
     list-style: none;
 }

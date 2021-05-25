@@ -15,6 +15,11 @@
         align-items: center;
     }
 }
+.announcement-bar-right {
+    @media (min-width: 768px) {
+        justify-content: flex-end;
+    }
+}
 .announcement-bar_icon-social {
     margin-left: 48px;
     display: flex;
