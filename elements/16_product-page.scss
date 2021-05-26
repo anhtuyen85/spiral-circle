@@ -1,7 +1,9 @@
 .slider-wrapper {
     #customize_wrapper {        
+        display: flex;
+        flex-direction: column;
         @media (min-width: 768px) {
-            display: flex;
+            flex-direction: row;
         }
         .customize-tools {            
             @media (min-width: 768px) {
@@ -16,6 +18,16 @@
             }
             @media (max-width: 767px) {
                 order: 2;
+                margin-top: 10px;
+                .thumbnails {
+                    display: flex;
+                    margin: 0 -5px;
+                    .media-item {
+                        padding: 0 5px;
+                        flex: 0 0 25%;
+                        max-width: 25%;
+                    }
+                }
             }
         }
         .slider-main {            
@@ -29,13 +41,15 @@
 }
 .product-content {   
     padding-top: 33px;
-    @media (min-width: 768px) {
-        padding-top: 0;
-       > div {
-        max-width: 565px;
-        margin-left: auto;
-        margin-right: auto;
-       }
+    @media (min-width: 992px) {
+        padding-top: 0;       
+    }
+    @media (min-width: 766px) {
+        > div {
+            max-width: 565px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     .product-info {
         .name-wishlist {                        
@@ -289,13 +303,18 @@
     }
     .details-content {
         background: #fff;
-        padding: 40px 18px 40px 50px;
+        padding: 20px 15px;
         &:empty {
             display: none;
         }
         @media (min-width: 768px) {
             max-width: 576px;
-            margin-left: auto;            
+            margin-left: auto;       
+            margin-right: auto;
+            padding: 40px 18px 40px 50px;     
+        }
+        @media (min-width: 992px) {
+            margin-right: 0;
         }
         table {
             tr {
@@ -304,6 +323,7 @@
             td, th {
                 line-height: 24px;
                 text-align: left;
+                padding: 10px 0;
                 @include font-heading;
             }
             th {
@@ -320,7 +340,7 @@
 }
 .product-recommendation {
     margin-top: 40px; 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
         margin-top: 0;
     }
     .title {

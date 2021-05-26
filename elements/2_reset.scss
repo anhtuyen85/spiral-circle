@@ -588,11 +588,24 @@ input[type="text"] {
   margin-bottom: 28px;
   @media (min-width: 768px) {
     margin-bottom: var(--gutter-xlg);
-  } 
+  }  
   .section_subtitle {
     max-width: 980px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+.index-carousel-products {
+  .section_content-head {
+    .section_title {
+      font-size: 37px;
+      line-height: 50px;
+      margin-bottom: 21px; 
+      @media (min-width: 768px) {
+        font-size: 48px;
+        line-height: 72px;
+      }
+    }
   }
 }
 .slider-container {

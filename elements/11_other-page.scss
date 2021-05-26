@@ -246,6 +246,13 @@
     input:not[type="checkbox"], select {
         width: 100%;
     }
+    td {
+        padding: 0 0 20px;
+        @media (max-width: 479px) {
+            display: block;
+            padding: 0 0 10px;
+        }
+    }
     .label {
         label {
             margin: 0;
@@ -293,7 +300,66 @@
         } 
     }      
 }
-
+.myaccount {
+    .grid__item {
+        h2 {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+        .btn {
+            margin-bottom: 15px;
+            padding: 10px 30px;
+            font-size: calc(var(--body-font-size) - 3px);
+        }
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }        
+}
+.myaccount__order-history {
+    @media (max-width: 991px) {
+        margin-top: 30px;
+    }
+}
+.account-sidebar {
+    margin-bottom: 40px;
+    .title {
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 10px 30px;
+        font-size: calc(var(--body-font-size) - 3px);
+    }
+    .return-page {
+        margin-top: 15px;
+        display: inline-block;
+    }
+}
+.address_table {
+    margin-bottom: 40px;
+    .address_title {
+        font-weight: 500;
+        font-size: var(--heading-size-h3);
+    }
+    td {
+        padding: 10px 0;        
+    }
+    .address_actions {
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            .btn {
+                margin: 15px 15px 0 0;
+            }
+        }
+        .btn {
+            padding: 10px 30px;
+            font-size: calc(var(--body-font-size) - 3px);
+        }
+    }
+}
 /* About us */
 .section-page-about-template {
     .block-logo_content {

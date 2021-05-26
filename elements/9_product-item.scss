@@ -146,9 +146,9 @@
         li {
             display: flex;
             align-items: center;
-            color: var(--btn3-cl);                
-            background-color: var(--btn3-bg-cl);
-            border: var(--btn3-border-width) solid var(--btn3-border-cl);
+            color: var(--main-color);                
+            background-color: #fff;
+            border: 1px solid var(--main-color);
             line-height: 22px;
             padding: 4px 15px;
             font-size: calc(var(--body-font-size) - 4px);

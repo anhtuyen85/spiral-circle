@@ -112,6 +112,15 @@
     margin: 0 auto 30px;
     color: var(--main-color);
 }
+@mixin max-height-zero {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s ease-in-out; 
+}
+@mixin max-height-full {
+    transition: max-height 0.35s ease-in-out;
+    max-height: 100%;
+}
 %list-style-reset {
     list-style: none;
 }
