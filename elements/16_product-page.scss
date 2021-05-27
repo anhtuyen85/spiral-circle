@@ -44,7 +44,7 @@
     @media (min-width: 992px) {
         padding-top: 0;       
     }
-    @media (min-width: 766px) {
+    @media (min-width: 768px) {
         > div {
             max-width: 565px;
             margin-left: auto;
@@ -131,6 +131,7 @@
                     line-height: 20px;
                     padding: 8px 20px;
                     text-align: center;
+                    border-radius: 0;
                 }
                 > a {
                     @include ab(0, n, n, n);
@@ -246,11 +247,13 @@
             &.disabled {
                 label {
                     cursor: not-allowed !important;
-                    color: #BABCBF;
-                    border-color: #BABCBF;
+                    color: #BABCBF !important;
+                    border-color: #BABCBF !important;
+                    background: none !important;
                     &:after {
                         content: '';                        
-                        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none' stroke='%23959595'%3E%3Cpath d='M0 1l1-1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0%/100% 100% no-repeat;                                            
+                        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none' stroke='%23959595'%3E%3Cpath d='M0 1l1-1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0%/100% 100% no-repeat;                 
+                        transform: rotateY(160deg);
                         @include ab(0, 0, 0, 0);                        
                     }
                 }
@@ -361,6 +364,11 @@
     margin-top: 40px; 
     @media (min-width: 768px) {
         margin-top: 70px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        max-width: 570px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .title {
         margin-bottom: 32px;
