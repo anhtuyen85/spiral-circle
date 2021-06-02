@@ -117,8 +117,9 @@
         font-size: calc(var(--body-font-size) + 4px);
         letter-spacing: -1.5px;
         color: var(--main-color);
+        font-weight: 700;
         margin-bottom: 25px;
-        @include font-custom;        
+        @include font-custom;                
         .svg-element-ui {
             display: flex;
             margin-right: 20px;
@@ -128,15 +129,17 @@
         @include font-custom; 
         letter-spacing: -1.5px;
         line-height: 24.55px;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
         display: inline-block;
         text-transform: uppercase;
         
     }
     .featured_block {
         user-select: none;
-        &:not(:last-child) {
-            margin-bottom: 40px;
+        &:not(:last-child) {            
+            @media (min-width: 992px) {
+                margin-bottom: 40px;
+            }
         }
     }
     #tag-chosen {
@@ -158,7 +161,10 @@
             cursor: pointer;
             @include font-custom;  
             &:not(:last-child) {
-                margin-right: 40px;
+                margin-right: 23px;
+                @media (min-width: 992px) {
+                    margin-right: 40px;
+                }
             }
             .js-close-tag {
                 margin-left: 5px;
@@ -176,6 +182,11 @@
             border-bottom: 1px solid var(--body-border-color);
             margin-bottom: 20px;
             padding-bottom: 6px;
+            span {
+                &:first-child {
+                    flex: 1;
+                }
+            }
         }        
         .tags-list {
             li {
@@ -232,5 +243,124 @@
                 }
             }            
         }   
+    }    
+}
+@media (max-width: 991px) {
+    .filter-sidebar-active {
+        overflow: hidden;
+        &:after {
+            content: '';
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, .5);
+            transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1),visibility 0.4s cubic-bezier(0, 0, 0.2, 1);
+            z-index: 992;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: none;
+            @include fixed(0, n, n, 0);
+        }
     }
+    .sidebar-title {
+        justify-content: center;
+    }
+    #filtersContent {
+        @include fixed(0, n, 0, 0); 
+        width: 100%; 
+        max-width: 375px;
+        background: var(--body-bg-color);
+        padding: 55px 27px;
+        z-index: 1002;
+        transform: translate(-100%, 0);
+        transition: all 0.5s ease-in-out; 
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include custom-scrollbar;            
+        &.is-open {
+            transform: translate(0);                
+        }            
+    }
+    .filters-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 19px;
+        span {
+            flex: 1;
+            text-align: center;
+            font-size: calc(var(--body-font-size) - 4px);
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            text-transform: uppercase;
+            @include font-heading;
+        }
+    }
+    .toggle-group-filters {        
+        display: flex;
+        align-items: center;
+        .dropdown-icon--open {
+            svg path {
+                stroke: var(--body-color);
+            }
+        }
+        .dropdown-icon--close {
+            display: none;           
+            svg path {
+                fill: var(--body-color);
+            }
+        }
+        .filter-listing {
+            @include max-height-zero;
+        }               
+    }
+    .filter-group {
+        .js-remove-filters {
+            display: none;
+        }
+        &.active {
+            .toggle-group-filters {                
+                .dropdown-icon--open {
+                    display: none;
+                }
+                .dropdown-icon--close {
+                    display: block;
+                }
+            }           
+            .filter-listing {
+                @include max-height-full;
+            }                
+        }
+    }
+    #sidebarDrawer {
+        .featured_block {
+            .filter-group {
+                .show-more {
+                    display: none;
+                }
+                &.active {
+                    .show-more {
+                        display: inline-block;
+                    }
+                }
+            }        
+            &:not(:last-child) {
+                .filter-group {
+                    &.active {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        #tag-chosen {
+            justify-content: center;            
+        }
+        #clear-filters {    
+            font-weight: 700;
+            font-size: var(--body-font-size);
+            line-height: 24.55px;            
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+    }    
 }
