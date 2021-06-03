@@ -1,3 +1,18 @@
+.template-404 .main-content {
+    padding-top: 40px;
+    @media(min-width: 768px) {
+        padding-top: 80px;
+    }
+    .empty-page-content {
+        h1 {
+            margin-bottom: 30px;
+            @include font-heading;
+        }
+        .text-notice {
+            margin-bottom: 30px;
+        }
+    }
+}
 /* Page Login */
 #customer {
     margin: 50px auto;

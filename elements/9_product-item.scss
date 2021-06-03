@@ -21,9 +21,15 @@
         }
         > .svg-element-ui {            
             display: none;
+            a {
+                display: flex;
+            }            
             @media (min-width: 768px) {
                 @include ab(16px, 23px, n, n);
                 display: block;
+            }
+            svg path {
+                stroke: var(--main-color);
             }
         }
     }
@@ -74,6 +80,9 @@
             display: flex;
             align-items: center;
             justify-content: center;            
+        }
+        .stamped-badge-caption {
+            display: none;
         }
     }
     .featured-collection__price {

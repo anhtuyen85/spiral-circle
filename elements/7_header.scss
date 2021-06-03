@@ -96,7 +96,13 @@
                 max-width: 100%;  
                 width: 100%; 
                 justify-content: center;   
-                flex-direction: column;              
+                flex-direction: column;      
+                &.show {
+                    .expand {
+                        transform: rotate(180deg);
+                        justify-content: flex-start;
+                    }
+                }        
             }
             .expand {
                 @include ab(0, 0, n, n);
@@ -141,7 +147,7 @@
                         line-height: 24px;
                         font-weight: 400;
                         display: inline-block;
-                        padding: 3px 0;
+                        padding: 3px 0;                        
                     }
                 }
             }
@@ -237,14 +243,16 @@
                         }
                         .menu-item {
                             position: relative;
-                            .dropdown-menu {
-                                visibility: hidden;                    
-                                background: var(--menu-background-color);                                                                               
-                                opacity: 0;
-                                display: none;
-                                min-width: 220px;                                
-                                animation: mmfadeIn 0.5s ease-in-out;                             
-                                @include ab(0, n, n, 100%);
+                            .dropdown-menu {                                
+                                background: var(--menu-background-color);                                                                                                               
+                                min-width: 220px;
+                                @media (min-width: 992px) {
+                                    visibility: hidden;                                                                                                                                  
+                                    opacity: 0;
+                                    display: none;                                                               
+                                    animation: mmfadeIn 0.5s ease-in-out;                             
+                                    @include ab(0, n, n, 100%);
+                                }
 
                             }
                             &:hover {
@@ -276,8 +284,11 @@
             }
         }        
     }
-    .level-three {
-        padding: 10px 0 24px 20px;
+    .level-three {    
+        padding: 15px 0;    
+        @media (min-width: 992px) {
+            padding: 10px 0 24px 20px;
+        }
         .menu-list {
             display: block;
             li {
@@ -390,5 +401,20 @@
     .section-header-main .header-col-right {
         opacity: 1;
         visibility: visible;
+    }
+    #header {
+        @include fixed(0, 0, n, 0);
+        z-index: 991;    
+        background: var(--menu-background-color);        
+    }
+}
+.header-sticky {
+    @include fixed(0, 0, n, 0);
+    z-index: 991;    
+    background: var(--menu-background-color);
+    .announcement-bar {
+        @media (min-width: 992px) {
+                display: none;
+        }    
     }
 }

@@ -60,6 +60,11 @@
             svg path {
                 stroke: var(--special-border);
             }
+            .arn__added {
+                svg path {
+                    fill: var(--special-border);
+                }
+            }
         }
         .product-name {
             color: var(--main-color);
@@ -78,6 +83,27 @@
         flex-wrap: wrap;
         .fa-star, .fa-star-o, .fa-star-half-o, .stamped-fa-star, .stamped-fa-star-o, .stamped-fa-star-half-o {
             color: var(--special-border) !important;
+        }
+        .stamped-badge {
+            display: flex;
+            align-items: center;
+            > span {
+                &:not(:last-child) {
+                    // margin-right: 8px !important;                      
+                }
+            }
+            .stamped-badge-caption {
+                display: none;
+                &:before {
+                    content: '(';
+                }
+                &:after {
+                    content: ')' !important;
+                }
+            }
+            .stamped-badge-caption[data-reviews][data-label][data-version="2"]:after {
+                content: ')' !important;
+            }
         }
     }
     .product-price {
@@ -108,8 +134,21 @@
         font-weight: 700;
         margin-top: 10px;
         margin-bottom: 10px;
+        display: flex;
         .number-stock {
             color: #EB5757;
+            position: relative;
+            padding-left: 13px;
+            margin-left: 10px;
+            &:after {
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: #EB5757;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                @include ab(50%, n, n, 0);                
+            }
         }
     } 
     .form-wrap {
