@@ -1,0 +1,103 @@
+.modal-ui {   
+    display: none; 
+    &:after {
+        content: '';
+        @include fixed(0, 0, 0, 0);
+        @extend %visibility-hidden;
+        background: rgba(0, 0, 0, 0.5);  
+        width: 100vw;
+        height: 100vh;                           
+        transition: opacity 0.4s cubic-bezier(0,0,.2,1), visibility 0.4s cubic-bezier(0,0,.2,1); 
+    }
+    &.is-open {
+        display: block;
+        &:after {
+            visibility: visible;
+            z-index: 99;
+            opacity: 1;
+        }       
+    } 
+    header {
+        position: static;
+        button[data-dialog-close] {
+            @include ab(10px, 10px, n, n); 
+            cursor: pointer;
+            svg path {
+                fill: var(--body-link);
+            }
+        }
+    }
+    > div:not([data-dialog-close]) {  
+        @include fixed(50%, n, n, 50%);         
+        background: var(--body-bg-color); 
+        padding: 40px 30px;          
+        width: calc(100% - 30px);
+        max-width: 812px;
+        max-height: 90vh;  
+        overflow: hidden;
+        overflow-y: auto;
+        transform: translate(-50%, -50.1%); 
+        animation: mmfadeIn .3s cubic-bezier(0,0,.2,1);
+        @media (min-width: 992px) {
+            padding: 40px;
+        }
+        > div {
+            width: 100%;            
+        }
+    }  
+    button.btn-search-close {
+        @include font-body;        
+        @include ab(0, 0, n, n);
+        cursor: pointer;
+        min-width: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 30px;        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        box-shadow: none;
+        svg {
+            pointer-events: none; 
+            path {
+                
+            }
+        }
+    }
+    .btn-search {
+        @include ab(40px, 50px, n, n);        
+        display: flex;
+        align-items: center;
+        svg path {
+            fill: var(--body-color);
+        }
+    }
+    .search-result-list {
+        padding-top: 20px;
+        .result-item {
+            margin-bottom: 40px;
+            .result-image {
+                display: block;
+                img {
+                    width: 100%;
+                }
+            }
+            .result-info {
+                padding: 20px 0 0;
+                text-align: center;
+                .result-title {
+                    @include font-custom;
+                    font-weight: 700;    
+                    display: block;
+                    line-height: 24px;      
+                    margin-bottom: 10px;          
+                }
+                .result-price {
+                    font-weight: 700;
+                    color: var(--price-color);
+                }
+            }
+        }
+    }
+}
