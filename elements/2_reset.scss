@@ -830,3 +830,109 @@ body.modal-opened {
 .arn_icon-preloader {
   display: none;
 }
+/* wishlist */
+.arn-wishlist-page .page-arn-wishlist {  
+  background: none;
+  .tabs {
+    margin: 20px auto;
+    display: none;
+  }
+  .arn-noti-modal-body input, select {
+    border: none;
+  }
+  .product-wl-title a {
+    color: var(--body-color);
+  }
+  .wl-group-button {
+    background: none;
+  }
+  .instock {
+    color: #6FCF97;
+  }
+  .qty-wrapper {
+    .qty-select {
+      background: #fff;
+      height: 46px;
+      border-radius: 0;
+      height: 46px;
+      border: none;
+      max-width: 140px;
+    }
+    input {
+      font-size: var(--body-font-size);
+    }
+    .qty-plus-wl,
+    .qty-minus-wl {
+      font-size: 20px;
+    }
+  }  
+  .arn-fave-list {
+      border: none;
+  } 
+  .arn-fave-list-container {
+      padding: 0;
+      @media (min-width: 768px) {                     
+          overflow: hidden;
+          overflow-x: auto;  
+      }
+  }
+  table {
+      th {
+          letter-spacing: 0.18em;
+      }        
+      .product-price {
+          @media (min-width: 768px) {
+              display: table-cell; 
+          } 
+      }
+      td:before {
+          @media (max-width: 767px) {
+              color: var(--body-color);
+          }
+      }
+      .product-image img {
+          height: auto;
+      }
+      .product-quantity input {
+          max-width: 80px; 
+          padding: 0 10px; 
+          height: 48px;
+          text-align: center;
+      }
+      select {          
+          padding-right: 20px;
+          background-position: calc(100% - 10px) 50%; 
+          height: 48px;
+          line-height: 48px;
+      }
+      .product-detail { 
+          .btn-actions  > a,
+          .view-btn {
+              display: inline-block; 
+              margin: 5px; 
+              white-space: nowrap; 
+              padding: 13px 15px;
+              line-height: 26px; 
+              font-weight: var(--btn1-fw);
+              color: var(--btn1-cl);
+              background: var(--btn1-bg-cl);
+              border: var(--btn1-border-width) solid var(--btn1-border-cl);
+              &:hover {
+                  color: var(--btn1-hover-cl);
+                  background: var(--btn1-hover-bg-cl);
+                  border-color: var(--btn1-hover-border-cl);   
+              }
+              &:last-child {
+                  color: var(--btn2-cl);
+                  background: var(--btn2-bg-cl);
+                  border: var(--btn2-border-width) solid var(--btn2-border-cl); 
+                  &:hover {
+                      color: var(--btn2-hover-cl);
+                      background: var(--btn2-hover-bg-cl);
+                      border-color: var(--btn2-hover-border-cl);
+                  }
+              }
+          }
+      }
+  }
+}

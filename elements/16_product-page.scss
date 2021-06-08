@@ -60,7 +60,12 @@
             svg path {
                 stroke: var(--special-border);
             }
-            .arn__added {
+            .arn_pending {
+                svg:not(.arn_icon) {
+                    display: none;
+                }
+            }
+            .arn_added {
                 svg path {
                     fill: var(--special-border);
                 }
@@ -163,6 +168,7 @@
             }
             .product-quantity {
                 position: relative;
+                background: #fff;
                 input {
                     width: 100%;
                     height: 46px;
@@ -171,6 +177,7 @@
                     padding: 8px 20px;
                     text-align: center;
                     border-radius: 0;
+                    font-size: var(--body-font-size);
                 }
                 > a {
                     @include ab(0, n, n, n);
@@ -267,8 +274,9 @@
                 text-align: center;
                 font-size: calc(var(--body-font-size) - 4px);
                 text-transform: uppercase;
-                border: 1.5px solid var(--btn2-border-cl);
-                color: var(--btn2-border-cl);
+                border: 1.5px solid var(--main-color);
+                color: var(--main-color);
+                background: #fff;
                 @extend %transition;
             }
             .swt-size {
@@ -280,8 +288,8 @@
                 }                
             }
             input:checked + label {
-                background-color: var(--btn2-bg-cl);                
-                color: var(--btn2-cl);
+                background-color: var(--main-color);                                
+                color: #fff;
             }
             &.disabled {
                 label {

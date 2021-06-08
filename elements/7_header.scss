@@ -98,7 +98,7 @@
                 justify-content: center;   
                 flex-direction: column;      
                 &.show {
-                    .expand {
+                    > .expand {
                         transform: rotate(180deg);
                         justify-content: flex-start;
                     }
@@ -171,8 +171,19 @@
                         flex-direction: column;
                         justify-content: center;
                         > * {
-                            width: 100%;
+                            width: 100%;                            
                         }
+                        .mega-menu__image {
+                            margin-top: 20px;
+                            .mega-title {
+                                color: var(--menu-color);
+                                margin-top: 10px;
+                                display: inline-block;
+                            }
+                            img {
+                                width: 100%;
+                            }
+                        }                        
                     }
                     > .menu-list {                         
                         @media (min-width: 992px) {
@@ -284,6 +295,28 @@
             }
             .link-parent {
                 position: relative;
+                padding: 4px 0;
+                > .expand {
+                    height: 100%;
+                }                                   
+            }
+            @media (max-width: 991px) {
+                .dropdown-menu {
+                    @include max-height-zero;
+                    padding: 0;
+                    > * {
+                        padding: 10px 0;
+                    }
+                }
+                &.show {                   
+                    .link-parent  > .expand {
+                        transform: rotate(180deg);
+                        justify-content: flex-start;
+                    } 
+                    >  .dropdown-menu {
+                        @include max-height-full;
+                    }
+                }
             }
         }        
     }
@@ -349,6 +382,9 @@
             }
         }
     }    
+}
+.logo-el-mobile {
+    padding: 0 15px;
 }
 .header-el-mobile {
     .header-icons {

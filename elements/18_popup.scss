@@ -15,7 +15,7 @@
             visibility: visible;
             z-index: 99;
             opacity: 1;
-        }       
+        }              
     } 
     header {
         position: static;
@@ -45,6 +45,11 @@
             width: 100%;            
         }
     }  
+    > .form-search-container {      
+        .search-result-list {        
+            width: auto;
+        }
+    }
     button.btn-search-close {
         @include font-body;        
         @include ab(0, 0, n, n);
@@ -59,10 +64,7 @@
         background: transparent;
         box-shadow: none;
         svg {
-            pointer-events: none; 
-            path {
-                
-            }
+            pointer-events: none;            
         }
     }
     .btn-search {
@@ -73,10 +75,12 @@
             fill: var(--body-color);
         }
     }
-    .search-result-list {
-        padding-top: 20px;
+    .search-result-list {                
         .result-item {
-            margin-bottom: 40px;
+            margin-top: 20px;
+            @media (min-width: 768px) {
+                margin-top: 40px;
+            }
             .result-image {
                 display: block;
                 img {

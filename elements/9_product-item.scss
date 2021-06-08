@@ -31,6 +31,16 @@
             svg path {
                 stroke: var(--main-color);
             }
+            .arn_pending {
+                svg:not(.arn_icon) {
+                    display: none;
+                }
+            }
+            .arn_added {
+                svg path {
+                    fill: var(--main-color);
+                }
+            }
         }
     }
     .featured-collection__image {
@@ -195,6 +205,9 @@
                 &:first-child {
                     flex: 1;
                 }
+            }
+            .js-remove-filters {
+                cursor: pointer;
             }
         }        
         .tags-list {
