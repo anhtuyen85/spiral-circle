@@ -140,19 +140,31 @@
         margin-top: 10px;
         margin-bottom: 10px;
         display: flex;
-        .number-stock {
-            color: #EB5757;
-            position: relative;
-            padding-left: 13px;
-            margin-left: 10px;
-            &:after {
-                content: '';
-                width: 8px;
-                height: 8px;
-                background: #EB5757;
-                border-radius: 50%;
-                transform: translateY(-50%);
-                @include ab(50%, n, n, 0);                
+        .number-stock {           
+            > span {                             
+                position: relative;
+                padding-left: 13px;
+                margin-left: 10px;
+                &:after {
+                    content: '';
+                    width: 8px;
+                    height: 8px;                    
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                    @include ab(50%, n, n, 0);                
+                }
+                &#out-stock {
+                    color: #EB5757;
+                    &:after {
+                        background: #EB5757;
+                    }
+                }
+                &#in-stock {
+                    color: #6FCF97;
+                    &:after {
+                        background: #6FCF97;
+                    }
+                }
             }
         }
     } 

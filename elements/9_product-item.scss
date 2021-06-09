@@ -76,7 +76,7 @@
         font-size: calc(var(--body-font-size) - 2px);
         line-height: 22px;
         margin-bottom: 8px;
-        @include font-custom;
+        @include font-heading;
         @media (min-width: 768px) {
             font-size: calc(var(--body-font-size) + 6px);
             line-height: 33px;
@@ -135,17 +135,16 @@
         align-items: center;
         font-size: calc(var(--body-font-size) + 4px);
         letter-spacing: -1.5px;
-        color: var(--main-color);
-        font-weight: 700;
+        color: var(--main-color);        
         margin-bottom: 25px;
-        @include font-custom;                
+        @include font-heading;                
         .svg-element-ui {
             display: flex;
             margin-right: 20px;
         }
     }
     #clear-filters {
-        @include font-custom; 
+        @include font-heading; 
         letter-spacing: -1.5px;
         line-height: 24.55px;
         margin-bottom: 18px;
@@ -178,7 +177,7 @@
             margin-bottom: 10px;
             border-radius: 40px;
             cursor: pointer;
-            @include font-custom;  
+            @include font-heading;  
             &:not(:last-child) {
                 margin-right: 23px;
                 @media (min-width: 992px) {
@@ -252,7 +251,7 @@
             }
         }    
         .show-more {
-            @include font-custom;
+            @include font-heading;
             line-height: 22px;
             font-size: calc(var(--body-font-size) - 2px);            
             text-decoration: underline;

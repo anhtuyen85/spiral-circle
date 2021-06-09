@@ -77,9 +77,6 @@
 @mixin font-heading {
     font-family: var(--font-heading);
 }
-@mixin font-custom {
-    font-family: 'Nunito', sans-serif;
-}
 @mixin font-custom-1 {
     font-family: 'Work Sans', sans-serif;
 }
@@ -257,6 +254,5 @@
         transform: translateX(610px);
     }
 }  
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');

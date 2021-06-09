@@ -6,7 +6,7 @@
         line-height: 48px;
         margin-bottom: 14px;
         font-weight: 700;
-        @include font-custom;
+        @include font-heading;
         @media (min-width: 768px) {
             font-size: 44px;
             line-height: 60px;
@@ -97,6 +97,7 @@
 }
 .site-footer{
     padding: 43px 0 0;    
+    @include font-heading;
     @media (min-width: 768px) {
         border-top: 1px solid currentColor;
         padding-bottom: 40px;

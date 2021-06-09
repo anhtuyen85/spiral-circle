@@ -49,7 +49,7 @@
                 @extend %transition;
             }
             .btn {
-                @include font-custom;
+                @include font-heading;
                 @include ab(50%, 25px, n, 25px);            
                 transform: translateY(-50%);
                 z-index: 1;

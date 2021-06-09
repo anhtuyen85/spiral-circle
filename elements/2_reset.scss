@@ -833,6 +833,10 @@ body.modal-opened {
 /* wishlist */
 .arn-wishlist-page .page-arn-wishlist {  
   background: none;
+  .page-title {
+    text-align: center;
+    color: var(--main-color);
+  }
   .tabs {
     margin: 20px auto;
     display: none;

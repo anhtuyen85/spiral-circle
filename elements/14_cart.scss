@@ -9,6 +9,11 @@
             @include title-heading;
         }
     }
+    .cart-empty {
+        p {
+            margin: 20px 0;
+        }
+    }
 }
 .cart-table {
     .line-item {

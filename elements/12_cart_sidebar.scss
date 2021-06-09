@@ -178,7 +178,7 @@
             font-size: calc(var(--body-font-size) + 2px);     
             line-height: 30px;
             font-weight: 700;             
-            @include font-custom;
+            @include font-heading;
             @media (min-width: 600px) {
                 font-size: calc(var(--body-font-size) + 6px);     
                 line-height: 32.74px;
