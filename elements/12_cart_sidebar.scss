@@ -22,7 +22,7 @@
     height: 100vh;
     max-width: 610px;    
     background: var(--body-bg-color);
-    padding: 30px 25px 50px; 
+    padding: 30px 25px 200px; 
     z-index: 1002;          
     animation: animation-left-right .8s both;                   
     @media (min-width: 500px) {
@@ -74,14 +74,16 @@
         }
     }
 }
-.drawer-content {
-    height: calc(100vh - 280px);
+.drawer-body {
+    height: calc(100vh - 750px);
     overflow: hidden;
     overflow-y: auto;      
     @media (min-width: 500px) {
-        height: calc(100vh - 290px);
+        height: calc(100vh - 780px);
     }
     @include custom-scrollbar;   
+}
+.drawer-content {    
     .line-item-inner {
         display: flex;        
         width: 100%;
@@ -205,9 +207,24 @@
     }
     .line-item-inner {
         display: flex;
-
     }
-
+    .line-item--price {
+        justify-content: space-between;       
+        form {
+            display: flex;
+        } 
+        .btn {
+            padding: 5px;
+            text-align: center;            
+            display: flex;
+            justify-content: center;
+            flex: 0 0 166px;
+            max-width: 166px;
+            font-weight: 400;
+            font-size: calc(var(--body-font-size) - 2px);
+            @include font-body;
+        }
+    }
 }
 .drawer-inner {
     .line-item {
@@ -219,14 +236,14 @@
     }    
 }
 .drawer-footer {   
-    @include fixed(n, 35px, 50px, 35px);
+    @include fixed(n, 0, 0, 0);
+    background: var(--body-bg-color);
+    padding: 30px 35px 50px 35px;    
     .drawer-subtotal {                       
         text-transform: uppercase;
         letter-spacing: 1.5px;
         margin: 0 0 18px;
-        color: var(--body-link);
-        font-weight: 500;
-        @include font-heading;        
+        color: var(--body-link);               
         span {
             padding-left: 15px;
             display: inline-block;

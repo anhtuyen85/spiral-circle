@@ -259,8 +259,11 @@ select::-ms-expand {
 }
 
 .btn[disabled] {
-  opacity: .7;
+  background: #d1d1d4;
+  border-color: #d1d1d4;
+  color: #000;  
   pointer-events: none;
+  cursor: not-allowed;
 }
 
 .text-center {

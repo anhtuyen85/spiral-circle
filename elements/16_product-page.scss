@@ -7,7 +7,8 @@
         }
         .customize-tools {            
             @media (min-width: 768px) {
-                width: 91px;
+                flex: 0 0 91px;
+                max-width: 91px;
                 .thumbnails {
                     .media-item {
                         &:not(:last-child) {
@@ -32,7 +33,8 @@
         }
         .slider-main {            
             @media (min-width: 768px) {
-                flex: 1;
+                flex: 0 0 calc(100% - 91px);
+                max-width: calc(100% - 91px);
                 min-width: 0;
                 padding: 0 0 0 27px;
             }

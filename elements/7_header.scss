@@ -1,6 +1,6 @@
 // top bar
 
-.announcement-bar {
+.announcement-bar {    
     padding: 7px 0;
     font-size: calc(var(--body-font-size) - 4px);        
     line-height: 23px;    
@@ -12,6 +12,13 @@
     }    
     .d-flex {
         align-items: center;
+    }
+    ul {
+        li {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
     }
 }
 .announcement-bar-right {
@@ -385,6 +392,7 @@
                 width: 100%;
                 background: linear-gradient(#051034 0%, rgba(0, 0, 0, 0.1146) 84.9%, rgba(0, 0, 0, 0) 100%);   
                 z-index: -1;
+                pointer-events: none;
                 @include ab(0, n, n, 0);
             }
         }
@@ -463,4 +471,13 @@
                 display: none;
         }    
     }
+    &.gradient .section-header-main:after {
+        content: none;
+    }
+}
+.mega-announcement {
+    padding: 12px 15px;
+    font-size: calc(var(--body-font-size) - 2px);
+    font-weight: 400;
+    @include font-heading;
 }
