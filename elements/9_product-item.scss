@@ -385,3 +385,15 @@
         }
     }    
 }
+.block-filter-rating {    
+    .filter-rating {  
+        color: #FFB905;               
+    }
+    .js-filters-number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #333;
+        padding-left: 13px;
+        @include font-custom-1;
+    }
+}

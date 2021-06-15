@@ -1,5 +1,5 @@
 html,
-body {
+body {  
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -617,11 +617,13 @@ input[type="text"] {
     position: relative;
   }
 }
-.slider-controls {
+.slider-controls, .tns-outer .tns-controls {
+  > button,
   > a {    
     display: none;
     @media (min-width: 768px) {
       display: block;
+      z-index: 9;
       @include ab(35%, n, n, n);    
       svg {
         width: 22px;
@@ -629,31 +631,31 @@ input[type="text"] {
           stroke: var(--special-border);
         }
       } 
-      &.js-prev-button {
-        left: -15px;
-        @media (min-width: 768px) {
-          left: calc(-2.5vw - 15px);   
-        }
-        @media (min-width: 1400px) {
-          left: calc(calc(-1 * (100vw - 1400px) / 2) + 15px);    
-        }
-        @media (min-width: 1550px) {
-          left: -68px;
-        }
+    }
+    &[data-controls="prev"], &.js-prev-button {
+      left: -15px;
+      @media (min-width: 768px) {
+        left: calc(-2.5vw - 15px);   
       }
-      &.js-next-button {
-        right: -15px;
-        @media (min-width: 768px) {
-          right: calc(-2.5vw - 15px);   
-        }
-        @media (min-width: 1400px) {
-          right: calc(calc(-1 * (100vw - 1400px) / 2) + 15px); 
-        }
-        @media (min-width: 1550px) {
-          right: -68px;
-        }
+      @media (min-width: 1400px) {
+        left: calc(calc(-1 * (100vw - 1400px) / 2) + 15px);    
       }
-    }    
+      @media (min-width: 1550px) {
+        left: -68px;
+      }
+    }
+    &[data-controls="next"], &.js-next-button {
+      right: -15px;
+      @media (min-width: 768px) {
+        right: calc(-2.5vw - 15px);   
+      }
+      @media (min-width: 1400px) {
+        right: calc(calc(-1 * (100vw - 1400px) / 2) + 15px); 
+      }
+      @media (min-width: 1550px) {
+        right: -68px;
+      }
+    }       
   }  
 }
 .tns-nav {

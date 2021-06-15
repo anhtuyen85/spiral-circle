@@ -13,7 +13,7 @@
     .d-flex {
         align-items: center;
     }
-    ul {
+    ul.menu-announcement {
         li {
             &:not(:last-child) {
                 margin-right: 15px;

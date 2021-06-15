@@ -109,6 +109,12 @@
     margin: 0 auto 30px;
     color: var(--main-color);
 }
+@mixin subtitle-heading {
+    font-weight: 500;
+    color: var(--main-color);
+    font-size: var(--heading-size-h2);
+    line-height: 40px;
+}
 @mixin max-height-zero {
     max-height: 0;
     overflow: hidden;
