@@ -380,7 +380,7 @@
     } 
 }
 .gradient {
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
         @include ab(0, n, n, 0);
         width: 100%;
         z-index: 9;

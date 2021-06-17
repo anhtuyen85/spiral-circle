@@ -635,7 +635,7 @@ input[type="text"] {
     &[data-controls="prev"], &.js-prev-button {
       left: -15px;
       @media (min-width: 768px) {
-        left: calc(-2.5vw - 15px);   
+        left: calc(-2.5vw - 7px);   
       }
       @media (min-width: 1400px) {
         left: calc(calc(-1 * (100vw - 1400px) / 2) + 15px);    
@@ -647,7 +647,7 @@ input[type="text"] {
     &[data-controls="next"], &.js-next-button {
       right: -15px;
       @media (min-width: 768px) {
-        right: calc(-2.5vw - 15px);   
+        right: calc(-2.5vw - 7px);   
       }
       @media (min-width: 1400px) {
         right: calc(calc(-1 * (100vw - 1400px) / 2) + 15px); 

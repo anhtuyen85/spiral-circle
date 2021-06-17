@@ -9,6 +9,9 @@
         height: 100%;
         width: 100%;
         padding: 5%;
+        @media (min-width: 992px) {
+            padding-top: calc(72px + 5%);
+        }
     }
     .slideshow__item-text {
         font-size: 30px;
