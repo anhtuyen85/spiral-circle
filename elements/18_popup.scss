@@ -75,8 +75,19 @@
             fill: var(--body-color);
         }
     }
-    .search-result-list {                
-        .result-item {
+    .search-result-list {      
+        .search-bar__result-category {
+            margin: 20px 0 0;    
+            font-size: 32px;
+            line-height: 1.5;
+            font-weight: 500;
+            @include font-heading;        
+            @media (min-width: 768px) {
+                margin-top: 40px;
+            }
+        }          
+        .result-item,
+        .search-bar__result-products {
             margin-top: 20px;
             @media (min-width: 768px) {
                 margin-top: 40px;
@@ -89,18 +100,20 @@
             }
             .result-info {
                 padding: 20px 0 0;
-                text-align: center;
-                .result-title {
-                    @include font-heading;
-                    font-weight: 700;    
-                    display: block;
-                    line-height: 24px;      
-                    margin-bottom: 10px;          
-                }
-                .result-price {
-                    font-weight: 700;
-                    color: var(--price-color);
-                }
+                text-align: center;               
+            }
+            .result-title,
+            .search-bar__item-title {
+                @include font-heading;
+                font-weight: 700;    
+                display: block;
+                line-height: 24px;      
+                margin: 0 0 10px;          
+            }
+            .result-price,
+            .search-bar__item-price {
+                font-weight: 700;
+                color: var(--price-color);
             }
         }
     }
