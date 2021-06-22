@@ -84,6 +84,16 @@
                 }
             }
         }
+        &.active {
+            > a:after {
+                opacity: 1;
+            }
+            .btn {
+                background-color: var(--btn3-hover-bg-cl);
+                border-color: var(--btn3-hover-border-cl);
+                color: var(--btn3-hover-cl);
+            }
+        }
     }
 }
 .section_content-banner {
@@ -156,8 +166,8 @@
     .tns-outer {
         position: relative;         
     }
-    .text-right {
-        padding-right: 40px;
+    .text-center {
+        margin-top: 30px;
     }
     .see-more {
         font-size: calc(var(--body-font-size) - 4px);

@@ -215,10 +215,10 @@
     }
 }
 /* Carousel Product */
-.slider-carousel {    
-    .slider-wrapper {
-        > .featured-collection {
-            // display: flex;
+.slider-container {    
+    .slider-wrapper {        
+        .text-center {
+            margin-top: 30px;
         }
     }
 }
