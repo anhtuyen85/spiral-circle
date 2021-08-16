@@ -40,7 +40,7 @@
         .item-title {
             font-size: var(--body-font-size);
             line-height: 24px;
-            font-weight: 700;
+            font-weight: 500;
             margin-bottom: 6px;
             color: var(--body-link);
             @include font-heading;
@@ -56,8 +56,7 @@
         .line-item--remove {
             margin-top: auto;
             a {
-                color: var(--body-color);
-                text-decoration: underline;
+                color: var(--body-color);                
                 &:hover {
                     color: var(--main-color);
                 }  

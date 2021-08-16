@@ -1,7 +1,7 @@
 // top bar
 
-.announcement-bar {    
-    padding: 7px 0;
+.announcement-bar {            
+    padding: 7px 0;    
     font-size: calc(var(--body-font-size) - 4px);        
     line-height: 23px;    
     @include font-heading;
@@ -10,8 +10,10 @@
         padding-top: 13px;
         padding-bottom: 13px;
     }    
-    .d-flex {
-        align-items: center;
+    .d-flex {        
+        @media (min-width: 992px) {
+            align-items: center;
+        }
     }
     ul.menu-announcement {
         li {
@@ -30,8 +32,10 @@
 .announcement-bar_icon-social {    
     display: flex;
     text-align: center;    
+    padding-top: 12px;
     @media (min-width: 992px) {
         margin-left: 48px;
+        padding-top: 0;
     }
     .svg-element-ui {
         display: flex;
@@ -63,7 +67,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--main-color);
+            background: var(--special-border);
             color: var(--main-text-color);                   
         }
     }  
@@ -89,6 +93,8 @@
         @media (min-width: 992px) {
             height: 100%;                    
             justify-content: space-between;
+            flex: 0 0 860px;
+            max-width: 860px;
         }
         > li {
             display: flex;
@@ -138,8 +144,7 @@
             }          
             > .child-menu {                                
                 background: var(--menu-background-color);                                                                                               
-                min-width: 220px;
-                width: 100%;                
+                min-width: 220px;                     
                 @media (max-width: 991px) {
                     @include max-height-zero;
                 }
@@ -156,7 +161,7 @@
                         line-height: 24px;
                         font-weight: 400;
                         display: inline-block;
-                        padding: 3px 0;    
+                        padding: 4px 0;    
                         @media (hover : hover) {
                             &:hover {
                                 color: var(--menu-color-hover);
@@ -228,7 +233,7 @@
                         .mega-menu__image {                            
                             margin-bottom: 24px;
                             &:not(:last-child) {
-                                margin-bottom: 35px;
+                                margin-bottom: 50px;
                             }
                             .mega-link {
                                 display: block;
@@ -238,7 +243,7 @@
                                 color: var(--menu-color);
                                 line-height: 25px;
                                 @include font-heading;
-                                @include ab(n, n, 15px, 20px);
+                                @include ab(n, n, 13px, 13px);
                             }
                         }
                     }
@@ -264,6 +269,11 @@
                         li {                            
                             @media (min-width: 992px) {
                                 padding: 0 20px;
+                            }
+                            &:hover {
+                                > a {
+                                    color: var(--menu-color-hover);
+                                }
                             }
                         }
                         .menu-item {
@@ -293,6 +303,9 @@
                 }
             }
             &:hover {
+                > a {
+                    color: var(--menu-color-hover);
+                }
                 > .child-menu {                    
                     visibility: visible;
                     z-index: 999;     
@@ -310,6 +323,10 @@
             .link-parent {
                 position: relative;
                 padding: 4px 0;
+                font-weight: 700;
+                > a {
+                    font-weight: inherit !important;
+                }
                 > .expand {
                     height: 100%;
                 }                                   
@@ -337,7 +354,7 @@
     .level-three {    
         padding: 15px 0;    
         @media (min-width: 992px) {
-            padding: 10px 0 24px 20px;
+            padding: 5px 0 17px 14px;
         }
         .menu-list {
             display: block;
@@ -390,7 +407,7 @@
                 content: '';
                 height: 178px;
                 width: 100%;
-                background: linear-gradient(#051034 0%, rgba(0, 0, 0, 0.1146) 84.9%, rgba(0, 0, 0, 0) 100%);   
+                background: linear-gradient(var(--menu-background-color) 0%, rgba(0, 0, 0, 0.1146) 84.9%, rgba(0, 0, 0, 0) 100%);   
                 z-index: -1;
                 pointer-events: none;
                 @include ab(0, n, n, 0);
@@ -402,6 +419,7 @@
     padding: 0 15px;
 }
 .header-el-mobile {
+    padding-top: 12px;
     .header-icons {
         ul {            
             li {

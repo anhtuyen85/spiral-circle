@@ -1,14 +1,24 @@
 .section-collection-template-top {
     .collection-title {
-        h3 {
-           @include subtitle-heading;            
+        h3 {           
             margin-bottom: 30px;
+            line-height: 35px;
+            color: var(--main-color);
+            // text-transform: uppercase;
+            @media (min-width: 768px) {
+                @include subtitle-heading;            
+            }
         }
     } 
     .section_content-head {
         margin-bottom: 15px;
         @media (min-width: 768px) {
             margin-bottom: 45px;
+        }
+        + .section_content-banner {
+            @media (min-width: 768px) {
+                margin-top: 24px;
+            }
         }
     }   
 }
@@ -145,7 +155,7 @@
     .section_content-body {
         margin-top: 30px;
         @media (min-width: 768px) {
-            margin-top: 45px;
+            margin-top: 110px;
         }
     }
 }
@@ -178,6 +188,37 @@
             &:hover {
                 color: var(--main-color);
             }
+        }
+    }
+}
+#main-template-page-shop_intention {
+    @media (min-width: 768px) {
+        &.block-margin {
+            padding-bottom: 360px;
+        }        
+    }
+}
+#collections-listing {
+    .image__style {
+        img {
+            object-fit: cover;
+        }
+    }
+    .collection-title {
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;                
+        @include font-heading;
+        @media (min-width: 768px) {
+            font-size: var(--heading-size-h3);
+        }
+        strong {
+            font-weight: 500;
+        }
+    }
+    .collection-item {
+        @media (min-width: 768px) {
+            margin-bottom: 30px;
         }
     }
 }

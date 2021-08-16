@@ -25,7 +25,16 @@
 .form-vertical {   
     h2 {
         @include title-heading;      
-    }
+        &#LoginHeading {            
+            @media (min-width: 768px) {
+                height: 144px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 55px;
+            }
+        }
+    }    
     &.form-message__title {
         line-height: 30px;
         font-size: var(--body-font-size);
@@ -106,6 +115,9 @@
         li {
             .svg-element-ui {
                 display: flex;
+                path {
+                    fill: var(--special-border);
+                }
             }
             &:not(:last-child) {
                 margin-right: 27.55px;
@@ -116,9 +128,20 @@
         font-size: calc(var(--body-font-size) + 4px);    
         &:not(.create-account) {
           width: 100%;
-          margin-top: 26px;         
+          margin-top: 21px;         
         }
     }   
+    #customer_login .form-control {
+        margin-bottom: 27px;
+    }
+    #create_customer {
+        .subtext {
+            margin-bottom: 38px;
+        }
+        .btn {
+            margin-top: 12px;
+        }
+    }
     .account-new {
         margin-top: 64px;
         text-align: center;
@@ -137,6 +160,9 @@
         .account-descript {
             margin-bottom: 24px;
             font-size: calc(var(--body-font-size) - 1px); 
+            max-width: 366px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }    
 }
@@ -190,12 +216,20 @@
         display: inline-block;
         background: var(--body-bg-color);
         padding: 0 12px;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
         font-size: calc(var(--body-font-size) - 4px);
         position: relative;
         z-index: 1;
         @include font-heading;
+    }
+}
+#main-template-customers-register {
+    .form-vertical h2 {
+        margin-bottom: 8px;
+    }
+    .subtext {
+        margin-bottom: 38px;
     }
 }
 #RecoverPasswordForm {
@@ -223,9 +257,10 @@
     }
     #RecoverHeading {
         @include title-heading;
+        margin-bottom: 10px;
     }
     .subtext {
-        margin-bottom: 40px;
+        margin-bottom: 42px;
     }
     .btn-recover {
         margin-top: 40px;
@@ -411,7 +446,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-        }
+        }        
     }
     .item__paragraph {
         padding-top: 40px;
@@ -432,7 +467,9 @@
         .page_title {
             margin-bottom: 14px;
             font-size: var(--heading-size-h3);
-            line-height: 1.4;
+            line-height: 1.25;
+            color: #4B5759;
+            letter-spacing: 0;
         }
     }
     .block-banner {
@@ -448,13 +485,28 @@
             max-width: 340px;
             margin-top: 30px;
             text-align: center;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            font-size: var(--body-font-size);
         }  
         .paragraph {        
             @media (min-width: 1200px) {
                 font-size: var(--heading-size-h3);
                 line-height: 1.4;
             }
-        }        
+        } 
+        &.banner3,
+        &.banner5 {
+            margin: 0;
+            .page_title {
+                margin-bottom: 18px;
+            }
+        }  
+        &.banner5 {
+            .btn {
+                margin-top: 47px;
+            }            
+        }     
     }
     .banner-bg {
         @include bg-custom;
@@ -467,8 +519,13 @@
 }
 
 /* Page Staff */ 
+.mainvisual-page-staff-template {
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
+}
 .section-page-staff-template {
-    padding-top: 40px;
+    padding-top: 20px;
     @media (min-width: 768px) {
         padding-top: 70px;
     }
@@ -476,6 +533,10 @@
 .staff-item {
     padding: 40px 35px 50px;
     text-align: center;
+    @media (min-width: 1440px) {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
     .image__style {
         margin-bottom: 20px;
         img {
@@ -510,10 +571,16 @@
             margin: 0;
         }
     }
+    .staff-item__intro {
+        @media (max-width: 767px) {
+            text-align: left;
+        }
+    }
     .btn {
         margin-top: 30px;
         padding-left: 15px;
         padding-right: 15px;
+        width: 100%;           
     }
 }
 /* Search page */
@@ -660,8 +727,7 @@
             &.active {
               a {
                 color: #fff;
-                background: var(--main-color);
-      
+                background: var(--main-color);      
                 &.next,
                 &.prev {
                   svg path {

@@ -17,17 +17,19 @@
     }
 }
 #CartDrawer {
-    @include fixed(0, 0, n, n);    
-    width: 100%;
-    height: 100vh;
+    @include fixed(0, 0, 0, n);    
+    width: 100%;    
     max-width: 610px;    
     background: var(--body-bg-color);
-    padding: 30px 25px 200px; 
-    z-index: 1002;          
+    padding: 20px 25px; 
+    z-index: 1002;        
+    display: flex;  
+    flex-direction: column;
     animation: animation-left-right .8s both;                   
-    @media (min-width: 500px) {
+    @media (min-width: 768px) {
         padding-left: 35px;
-        padding-right: 35px;                
+        padding-right: 35px;    
+        padding: 30px 35px 50px;            
     }
 }
 .drawer-header {
@@ -35,7 +37,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0 0 30px;
+        margin: 0 0 20px;
+        @media (min-width: 768px) {
+            margin-bottom: 30px;
+        }
         .btn {
             padding: 0;
             .svg-element-ui {
@@ -74,27 +79,24 @@
         }
     }
 }
-.drawer-body {
-    height: calc(100vh - 750px);
-    overflow: hidden;
-    overflow-y: auto;      
-    @media (min-width: 500px) {
-        height: calc(100vh - 780px);
-    }
-    @include custom-scrollbar;   
-}
-.drawer-content {    
+.line-item {
     .line-item-inner {
         display: flex;        
         width: 100%;
         .line-item--media {
             flex: 0 0 115px;
-            max-width: 115px;
+            max-width: 115px;          
+            .image__style {
+                // padding-top: 100% !important;
+                // img {
+                //     object-fit: cover;
+                // }
+            } 
         }
         .line-item--infor {
             flex: 0 0 calc(100% - 115px);
             padding: 0 0 0 15px;
-            @media (min-width: 500px) {
+            @media (min-width: 768px) {
                 padding-left: 35px;
             }
         }
@@ -102,14 +104,24 @@
     }
     .line-item--remove {
         text-align: center;
-        margin: 10px auto 0;
+        margin: 8px auto 0;
+        @media (max-width: 767px) {
+            line-height: 1;
+        }
+        @media (min-width: 768px) {
+            margin-top: 10px;
+        }
         a {
             text-transform: uppercase;
-            font-size: calc(var(--body-font-size) - 2px);            
+            font-size: 10px;            
             letter-spacing: 0.15em;
             display: inline-block;
-            line-height: 30px;
+            line-height: 16px;
             position: relative;
+            @media (min-width: 768px) {
+                font-size: calc(var(--body-font-size) - 2px); 
+                line-height: 30px; 
+            }
             &:after {
                 content: '';
                 height: 1px;
@@ -126,35 +138,48 @@
     .item-title {        
         font-weight: 500;
         font-size: calc(var(--body-font-size) - 2px);
-        line-height: 22px;
-        margin-bottom: 8px;
+        line-height: 1;
+        margin-bottom: 12px;
         @include font-heading;
         @media (min-width: 768px) {
-            font-size: calc(var(--body-font-size) + 6px);
-            line-height: 29px;
-            margin-bottom: 20px;
+            font-size: var(--heading-size-h3);
+            line-height: 30px;
+            margin-bottom: 19px;
         }
     }
     .line-item-options {
         overflow: hidden;
+        @media (max-width: 767px) {
+            line-height: 1;
+            font-size: 14px;
+        }
         p {
-            margin: 0 0 5px;                                    
-            letter-spacing: -1.5px;            
+            margin: 0;                                                
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
         }
     }
     .line-item--price {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        margin: 17px 0 0;
+        flex-wrap: wrap;                
+        margin: 15px 0 0;
+        @media (min-width: 768px) {
+            margin-top: 17px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
         .product-quantity {
             border-bottom: 1px solid var(--body-color);
             width: 140px;
             position: relative;
             input {
                 height: 38px;
-                font-size: calc(var(--body-font-size) - 2px);       
+                font-size: calc(var(--body-font-size) - 2px);   
+                background: #fff;    
                 font-weight: 400;     
                 width: 100%;       
                 border: none;              
@@ -163,7 +188,7 @@
             }
             > a {
                 display: flex;
-                width: 30px;
+                width: 37px;
                 height: 37px;
                 justify-content: center;
                 align-items: center;
@@ -176,33 +201,51 @@
             }
         }
         > p {            
-            margin: 0;                        
+            margin: 12px 0 0;                        
             font-size: calc(var(--body-font-size) + 2px);     
-            line-height: 30px;
-            font-weight: 700;             
+            line-height: 1;
+            font-weight: 500;             
             @include font-heading;
-            @media (min-width: 600px) {
+            @media (min-width: 768px) {
+                margin: 0;
                 font-size: calc(var(--body-font-size) + 6px);     
                 line-height: 32.74px;
             }          
         }
     }  
 }
+.drawer-content {  
+    overflow: hidden;
+    overflow-y: auto;          
+    @include custom-scrollbar;           
+}
 .product-bestseller {
     border-top: 1px solid #4B5759;
-    margin: 55px 0;
+    margin: 22px 0 7px;
+    @media (min-width: 768px) {
+        margin-top: 53px;
+        margin-bottom: 53px;
+    }
     .title {
-        margin: 34px 0 5px;
+        margin: 15px 0;
         font-size: calc(var(--body-font-size) - 2px);
-        font-weight: 700;
+        font-weight: 500;
         letter-spacing: 1.5px;     
         color: #000;   
         text-transform: uppercase;
         display: block;
+        line-height: 1;
+        @media (min-width: 768px) {
+            margin-top: 40px;
+            margin-bottom: 29px;
+        }
     }
     .line-item {
         &:not(:last-child) {
-            margin-bottom: 53px;
+            margin-bottom: 22px;
+            @media (min-width: 768px) {
+                margin-bottom: 53px;
+            }
         }
     }
     .line-item-inner {
@@ -231,19 +274,28 @@
         display: block;
         width: 100%;
         &:not(:last-child) {
-            margin: 0 0 85px;
+            margin: 0 0 22px;
+            @media (min-width: 768px) {
+                margin-bottom: 53px;
+            }
         }
     }    
 }
-.drawer-footer {   
-    @include fixed(n, 0, 0, 0);
-    background: var(--body-bg-color);
-    padding: 30px 35px 50px 35px;    
+.drawer-footer {     
+    .drawer-inner {
+        margin-top: 7px;    
+        @media (min-width: 768px) {
+            margin-top: 50px;
+        }  
+    }
     .drawer-subtotal {                       
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        margin: 0 0 18px;
-        color: var(--body-link);               
+        margin: 0 0 7px;
+        color: var(--body-link);      
+        @media (min-width: 768px) {
+            margin-bottom: 24px;
+        }
         span {
             padding-left: 15px;
             display: inline-block;
@@ -251,12 +303,12 @@
     }
     .btn {
         width: 100%;
-        padding: 10px;        
+        padding: 9px 10px;        
         line-height: 28px;
         font-weight: 400;        
         font-family: var(--body-font-family);  
         letter-spacing: 1.5px;      
-        @media (min-width: 500px) {
+        @media (min-width: 768px) {
             padding-top: 19px;    
             padding-bottom: 19px;    
             font-size: calc(var(--body-font-size) + 4px);
